@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --radius: 0.5rem;
+
+    /* Markovate Custom Colors */
+    --markovate-blue: 231 60% 48%;
+    --markovate-purple: 259 76% 53%;
+    --markovate-red: 354 59% 50%;
+    --markovate-dark: 240 10% 3.9%;
+    --markovate-gradient-start: 231 60% 48%;
+    --markovate-gradient-end: 259 76% 53%;
+  }
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('https://ext.same-assets.com/839307342/3446792116.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('https://ext.same-assets.com/839307342/630961241.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('https://ext.same-assets.com/839307342/2036453901.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('https://ext.same-assets.com/839307342/3153254398.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('https://ext.same-assets.com/839307342/3896214380.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Nunito Sans', system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Graphik', 'Nunito Sans', system-ui, sans-serif;
+    font-weight: 500;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(to right,
+        hsl(var(--markovate-gradient-start)),
+        hsl(var(--markovate-gradient-end)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-gradient {
+    background: linear-gradient(to right,
+        hsl(var(--markovate-gradient-start)),
+        hsl(var(--markovate-gradient-end)));
+  }
+}
+
+
+.animate-slide {
+  display: flex;
+  animation: slide 30s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-100%));
+  }
+}
+
+.animate-slide:hover {
+  animation-play-state: paused;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .animate-slide {
+    animation-duration: 10s;
+  }
+}
+
+/* styles/globals.css */
+.animate-slide-case-studies {
+  display: flex;
+  animation: slide-case-studies 30s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes slide-case-studies {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 3)); /* Adjusted for repeatCount = 3 */
+  }
+}
+
+/* Pause animation on hover */
+.animate-slide-case-studies:hover {
+  animation-play-state: paused;
+}
+
+/* Ensure container hides overflow */
+.overflow-hidden {
+  overflow: hidden;
+}
