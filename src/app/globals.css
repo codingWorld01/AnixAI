@@ -25,13 +25,13 @@
     --ring: 240 4.9% 83.9%;
     --radius: 0.5rem;
 
-    /* Markovate Custom Colors */
-    --markovate-blue: 231 60% 48%;
-    --markovate-purple: 259 76% 53%;
-    --markovate-red: 354 59% 50%;
-    --markovate-dark: 240 10% 3.9%;
-    --markovate-gradient-start: 231 60% 48%;
-    --markovate-gradient-end: 259 76% 53%;
+    /* anixai Custom Colors */
+    --anixai-blue: 231 60% 48%;
+    --anixai-purple: 259 76% 53%;
+    --anixai-red: 354 59% 50%;
+    --anixai-dark: 240 10% 3.9%;
+    --anixai-gradient-start: 231 60% 48%;
+    --anixai-gradient-end: 259 76% 53%;
   }
 }
 
@@ -99,8 +99,8 @@
 @layer utilities {
   .text-gradient {
     background: linear-gradient(to right,
-        hsl(var(--markovate-gradient-start)),
-        hsl(var(--markovate-gradient-end)));
+        hsl(var(--anixai-gradient-start)),
+        hsl(var(--anixai-gradient-end)));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -109,8 +109,8 @@
 
   .bg-gradient {
     background: linear-gradient(to right,
-        hsl(var(--markovate-gradient-start)),
-        hsl(var(--markovate-gradient-end)));
+        hsl(var(--anixai-gradient-start)),
+        hsl(var(--anixai-gradient-end)));
   }
 }
 

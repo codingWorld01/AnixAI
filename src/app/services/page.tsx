@@ -209,16 +209,16 @@ export default function ServicesPage() {
           <div className="space-y-20">
             {serviceCategories.map((category) => (
               <div key={category.title} className="mb-12">
-                <h3 className="text-2xl font-bold mb-8 text-markovate-blue">{category.title}</h3>
+                <h3 className="text-2xl font-bold mb-8 text-anixai-blue">{category.title}</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   {category.services.map((service) => (
                     <Link key={service.name} href={service.link} className="group">
-                      <div className="p-6 rounded-lg border border-border/40 bg-card/60 h-full group-hover:border-markovate-blue/50 transition-colors duration-300">
+                      <div className="p-6 rounded-lg border border-border/40 bg-card/60 h-full group-hover:border-anixai-blue/50 transition-colors duration-300">
                         <div className="flex items-center mb-4">
-                          <div className="p-2 rounded-md bg-markovate-blue/10 text-markovate-blue mr-3">
+                          <div className="p-2 rounded-md bg-anixai-blue/10 text-anixai-blue mr-3">
                             {service.icon}
                           </div>
-                          <h4 className="text-lg font-semibold group-hover:text-markovate-blue transition-colors">
+                          <h4 className="text-lg font-semibold group-hover:text-anixai-blue transition-colors">
                             {service.name}
                           </h4>
                         </div>
@@ -239,13 +239,13 @@ export default function ServicesPage() {
         <div className="container px-4 md:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              A Decade of Innovation: Celebrating Markovate's Technological Evolution
+              A Decade of Innovation: Celebrating anixai's Technological Evolution
             </h2>
             <p className="text-muted-foreground text-lg mb-10">
-              In the past ten years, Markovate has transformed from a humble startup into a leader in AI innovation. Our journey isn't just about the technologies we've mastered, but about the clients whose businesses we've empowered along the way.
+              In the past ten years, anixai has transformed from a humble startup into a leader in AI innovation. Our journey isn't just about the technologies we've mastered, but about the clients whose businesses we've empowered along the way.
             </p>
             <Link href="/about-us">
-              <Button variant="outline" className="rounded-full border-markovate-blue text-markovate-blue hover:bg-markovate-blue hover:text-white">
+              <Button variant="outline" className="rounded-full border-anixai-blue text-anixai-blue hover:bg-anixai-blue hover:text-white">
                 Learn about our journey
               </Button>
             </Link>

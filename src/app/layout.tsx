@@ -4,9 +4,9 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
-  title: "Markovate | Generative AI Company Driving Innovation and Efficiency",
+  title: "anixai | Generative AI Company Driving Innovation and Efficiency",
   description:
-    "Markovate is a Generative AI company offering innovative solutions to enhance efficiency & productivity with cutting-edge generative AI technology.",
+    "anixai is a Generative AI company offering innovative solutions to enhance efficiency & productivity with cutting-edge generative AI technology.",
 };
 
 export default function RootLayout({

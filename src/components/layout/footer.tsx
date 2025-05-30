@@ -70,8 +70,8 @@ const footerLinks = [
 ];
 
 const socialLinks = [
-  { name: "LinkedIn", href: "https://www.linkedin.com/company/markovate" },
-  { name: "Twitter", href: "https://twitter.com/markovate" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/anixai" },
+  { name: "Twitter", href: "https://twitter.com/anixai" },
 ];
 
 export function Footer() {
@@ -82,11 +82,11 @@ export function Footer() {
           <div className="mb-10 md:mb-0 md:max-w-[300px]">
             <Link href="/" className="inline-block mb-6">
               <Image
-                src="https://ext.same-assets.com/839307342/762043445.webp"
-                alt="Markovate Logo"
+                src="/images/anixlogo.png"
+                alt="anixai Logo"
                 width={180}
                 height={45}
-                className="h-10 w-auto"
+                className="h-20 w-auto"
               />
             </Link>
             <p className="text-sm text-muted-foreground mb-4">
@@ -99,7 +99,7 @@ export function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-markovate-blue"
+                  className="text-muted-foreground hover:text-anixai-blue"
                 >
                   {social.name === "LinkedIn" ? (
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -122,7 +122,7 @@ export function Footer() {
                 <ul className="space-y-2">
                   {column.links.map((link) => (
                     <li key={link.label}>
-                      <Link href={link.href} className="text-xs text-muted-foreground hover:text-markovate-blue transition-colors">
+                      <Link href={link.href} className="text-xs text-muted-foreground hover:text-anixai-blue transition-colors">
                         {link.label}
                       </Link>
                     </li>
@@ -135,7 +135,7 @@ export function Footer() {
 
         <div className="border-t border-border/40 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-xs text-muted-foreground mb-4 md:mb-0">
-            Markovate Inc. | Copyright 2024 | Privacy Policy | Sitemap
+            anixai Inc. | Copyright 2024 | Privacy Policy | Sitemap
           </p>
           <div className="flex space-x-4">
             <button className="text-muted-foreground hover:text-white transition-colors">

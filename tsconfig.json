@@ -34,7 +34,7 @@
     ".next/types/**/*.ts",
     "next-env.d.ts",
     "build/types/**/*.ts"
-  ],
+, "src/app/api/send-email/route.ts"  ],
   "exclude": [
     "node_modules"
   ]

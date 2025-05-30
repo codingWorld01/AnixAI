@@ -54,7 +54,7 @@ export function BlogPreview() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent z-10" />
                   <div className="absolute bottom-4 left-4 z-20">
-                    <span className="text-xs inline-block rounded-full px-2.5 py-0.5 bg-markovate-blue/10 text-markovate-blue font-medium">
+                    <span className="text-xs inline-block rounded-full px-2.5 py-0.5 bg-anixai-blue/10 text-anixai-blue font-medium">
                       {post.category}
                     </span>
                   </div>

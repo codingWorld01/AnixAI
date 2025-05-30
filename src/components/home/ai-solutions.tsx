@@ -60,9 +60,9 @@ export function AISolutions() {
   };
 
   return (
-    <section className="py-16 bg-background">
+    <section className="pt-16 bg-background">
       <div className="container px-4 md:px-8">
-        <div className="text-center mb-14">
+        <div className="text-center mb-1">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">
             AI Solutions We Have Built for Our Clients
           </h2>
@@ -77,14 +77,14 @@ export function AISolutions() {
           <div className="absolute top-0 right-2 flex space-x-2 z-10">
             <button
               onClick={handlePrev}
-              className="bg-markovate-blue/80 text-white p-3 rounded-full hover:bg-markovate-blue"
+              className="bg-anixai-blue/80 text-white p-3 rounded-full hover:bg-anixai-blue"
               aria-label="Previous case study"
             >
               <ChevronLeft size={24} />
             </button>
             <button
               onClick={handleNext}
-              className="bg-markovate-blue/80 text-white p-3 rounded-full hover:bg-markovate-blue"
+              className="bg-anixai-blue/80 text-white p-3 rounded-full hover:bg-anixai-blue"
               aria-label="Next case study"
             >
               <ChevronRight size={24} />
@@ -106,8 +106,8 @@ export function AISolutions() {
                   <div className="grid grid-cols-1 md:grid-cols-2 h-full">
                     <div className="p-6 flex flex-col justify-between h-full">
                       <div>
-                        <div className="mb-4 inline-block bg-markovate-blue/10 px-3 py-1 rounded-full">
-                          <span className="text-markovate-blue text-sm font-medium">Case Study</span>
+                        <div className="mb-4 inline-block bg-anixai-blue/10 px-3 py-1 rounded-full">
+                          <span className="text-anixai-blue text-sm font-medium">Case Study</span>
                         </div>
                         <br />
 
@@ -119,7 +119,7 @@ export function AISolutions() {
                         </p>
                         <br />
                         <div className="mb-4">
-                          <span className="block text-4xl font-bold text-markovate-blue text-white">
+                          <span className="block text-4xl font-bold text-anixai-blue text-white">
                             {solutions[currentIndex].stats}
                           </span>
                           <span className="text-sm text-gray-300">
@@ -129,7 +129,7 @@ export function AISolutions() {
                         <br />
                         <blockquote className="text-gray-300 italic text-sm md:text-base">
                           "{solutions[currentIndex].quote}" <br />
-                          <span className="text-markovate-blue font-medium ">
+                          <span className="text-anixai-blue font-medium ">
                             — {solutions[currentIndex].quoteAuthor}
                           </span>
                         </blockquote>
@@ -138,7 +138,7 @@ export function AISolutions() {
                       <Link href={solutions[currentIndex].link}>
                         <Button
                           variant="outline"
-                          className="mt-4 rounded-full border-markovate-blue text-markovate-blue hover:bg-markovate-blue hover:text-white"
+                          className="mt-4 rounded-full border-anixai-blue text-anixai-blue hover:bg-anixai-blue hover:text-white"
                         >
                           View Case Study
                         </Button>

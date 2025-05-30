@@ -52,12 +52,12 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Markovate Custom Colors
-        markovate: {
-          blue: "hsl(var(--markovate-blue))",
-          purple: "hsl(var(--markovate-purple))",
-          red: "hsl(var(--markovate-red))",
-          dark: "hsl(var(--markovate-dark))",
+        // anixai Custom Colors
+        anixai: {
+          blue: "hsl(var(--anixai-blue))",
+          purple: "hsl(var(--anixai-purple))",
+          red: "hsl(var(--anixai-red))",
+          dark: "hsl(var(--anixai-dark))",
         },
       },
       borderRadius: {
@@ -92,7 +92,7 @@ const config = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-linear":
-          "linear-gradient(to right, hsl(var(--markovate-gradient-start)), hsl(var(--markovate-gradient-end)))",
+          "linear-gradient(to right, hsl(var(--anixai-gradient-start)), hsl(var(--anixai-gradient-end)))",
       },
     },
   },

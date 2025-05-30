@@ -99,8 +99,8 @@ export function Header() {
         <div className="flex items-center">
           <Link href="/" className="mr-6">
             <Image
-              src="https://ext.same-assets.com/839307342/679825295.webp"
-              alt="Markovate Logo"
+              src="/images/anixlogo.png"
+              alt="AnixAI Logo"
               width={150}
               height={36}
               className="h-9 w-auto"
@@ -110,15 +110,15 @@ export function Header() {
           <nav className="hidden md:flex items-center space-x-4">
             <ServicesNav />
             <IndustriesNav />
-            <Link href="/work" className="text-sm font-medium text-foreground hover:text-markovate-blue transition-colors">Work</Link>
-            <Link href="/company" className="text-sm font-medium text-foreground hover:text-markovate-blue transition-colors">Company</Link>
-            <Link href="/blog" className="text-sm font-medium text-foreground hover:text-markovate-blue transition-colors">Blog</Link>
-            <Link href="/resources" className="text-sm font-medium text-foreground hover:text-markovate-blue transition-colors">Resources</Link>
+            <Link href="/work" className="text-sm font-medium text-foreground hover:text-anixai-blue transition-colors">Work</Link>
+            <Link href="/company" className="text-sm font-medium text-foreground hover:text-anixai-blue transition-colors">Company</Link>
+            <Link href="/blog" className="text-sm font-medium text-foreground hover:text-anixai-blue transition-colors">Blog</Link>
+            <Link href="/resources" className="text-sm font-medium text-foreground hover:text-anixai-blue transition-colors">Resources</Link>
           </nav>
         </div>
         <div className="flex items-center">
           <Link href="/contact-us" className="hidden md:inline-flex">
-            <Button className="bg-gradient rounded-full text-white px-6 hover:opacity-90">Contact Us</Button>
+            <Button className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-white px-6 hover:opacity-90">Contact Us</Button>
           </Link>
           <button className="md:hidden p-2">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -135,17 +135,17 @@ const ServicesNav = () => (
   <NavigationMenu>
     <NavigationMenuList>
       <NavigationMenuItem>
-        <NavigationMenuTrigger className="bg-transparent text-foreground hover:bg-transparent hover:text-markovate-blue">Services</NavigationMenuTrigger>
+        <NavigationMenuTrigger className="bg-transparent text-foreground hover:bg-transparent hover:text-anixai-blue">Services</NavigationMenuTrigger>
         <NavigationMenuContent>
           <div className="grid grid-cols-3 gap-3 p-4 md:w-[600px] lg:w-[800px]">
             {servicesData.map((section) => (
               <div key={section.title} className="space-y-2">
-                <h3 className="font-medium text-markovate-blue">{section.title}</h3>
+                <h3 className="font-medium text-anixai-blue">{section.title}</h3>
                 <ul className="space-y-1">
                   {section.children.map((item) => (
                     <li key={item.title}>
                       <NavigationMenuLink asChild>
-                        <Link href={item.href} className="block text-sm py-1 text-foreground/80 hover:text-markovate-blue">
+                        <Link href={item.href} className="block text-sm py-1 text-foreground/80 hover:text-anixai-blue">
                           {item.title}
                         </Link>
                       </NavigationMenuLink>
@@ -165,12 +165,12 @@ const IndustriesNav = () => (
   <NavigationMenu>
     <NavigationMenuList>
       <NavigationMenuItem>
-        <NavigationMenuTrigger className="bg-transparent text-foreground hover:bg-transparent hover:text-markovate-blue">Industries</NavigationMenuTrigger>
+        <NavigationMenuTrigger className="bg-transparent text-foreground hover:bg-transparent hover:text-anixai-blue">Industries</NavigationMenuTrigger>
         <NavigationMenuContent>
           <div className="grid grid-cols-3 gap-3 p-4 md:w-[600px]">
             {industriesData.map((industry) => (
               <NavigationMenuLink key={industry.title} asChild>
-                <Link href={industry.href} className="block text-sm py-1 text-foreground/80 hover:text-markovate-blue">
+                <Link href={industry.href} className="block text-sm py-1 text-foreground/80 hover:text-anixai-blue">
                   {industry.title}
                 </Link>
               </NavigationMenuLink>
