@@ -7,7 +7,7 @@ interface FormData {
   firstName: string;
   lastName: string;
   email: string;
-  phone: string; 
+  phone: string;
   company: string;
   message: string;
 }
@@ -121,7 +121,7 @@ export async function POST(request: NextRequest) {
                     100 Pine Street, Suite 1250, San Francisco, CA 94111
                   </p>
                   <p style="color: #666666; font-size: 14px; margin: 5px 0;">
-                    <a href="mailto:info@anixai.com" style="color: #1a73e8; text-decoration: none;">info@anixai.com</a> | +1 (415) 555-1234
+                    <a href="mailto:info@anixai.io" style="color: #1a73e8; text-decoration: none;">info@anixai.io</a> | +1 (415) 555-1234
                   </p>
                 </td>
               </tr>
@@ -140,7 +140,7 @@ export async function POST(request: NextRequest) {
       text: emailText,
       html: emailHtml,
     });
-    
+
     return NextResponse.json({ message: "Email sent successfully" }, { status: 200 });
   } catch (error) {
     console.error("Error in API route:", error);

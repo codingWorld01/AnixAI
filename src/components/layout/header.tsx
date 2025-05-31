@@ -137,7 +137,7 @@ const ServicesNav = () => (
       <NavigationMenuItem>
         <NavigationMenuTrigger className="bg-transparent text-foreground hover:bg-transparent hover:text-anixai-blue">Services</NavigationMenuTrigger>
         <NavigationMenuContent>
-          <div className="grid grid-cols-3 gap-3 p-4 md:w-[600px] lg:w-[800px]">
+          <div className="grid grid-cols-3 gap-3 md:w-[600px] lg:w-[800px]">
             {servicesData.map((section) => (
               <div key={section.title} className="space-y-2">
                 <h3 className="font-medium text-anixai-blue">{section.title}</h3>

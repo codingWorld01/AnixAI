@@ -20,7 +20,7 @@ export function CTASection() {
                 Contact Us
               </Button>
             </Link>
-            <Link href="/case-studies">
+            <Link href="/work">
               <Button variant="outline" className="rounded-full border-white/20 bg-background/40 backdrop-blur-sm text-white px-8 py-6 text-lg font-medium hover:bg-background/60 w-full sm:w-auto">
                 View Our Work
               </Button>

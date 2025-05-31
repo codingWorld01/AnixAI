@@ -311,7 +311,7 @@ export default function ContactPage() {
                           <p className="text-sm text-muted-foreground">We'll respond within 24 hours</p>
                         </div>
                       </div>
-                      <p className="text-anixai-blue font-medium">info@anixai.com</p>
+                      <p className="text-anixai-blue font-medium">info@anixai.io</p>
                     </CardContent>
                   </Card>
                 </div>

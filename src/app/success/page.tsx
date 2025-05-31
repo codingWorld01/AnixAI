@@ -30,8 +30,8 @@ export default function SuccessPage() {
                             </p>
                             <p className="text-sm text-muted-foreground mb-8">
                                 We appreciate your interest in AnixAI. If you have any urgent queries, feel free to reach out to us at{" "}
-                                <a href="mailto:info@anixai.com" className="text-anixai-blue hover:underline">
-                                    info@anixai.com
+                                <a href="mailto:info@anixai.io" className="text-anixai-blue hover:underline">
+                                    info@anixai.io
                                 </a>.
                             </p>
 
