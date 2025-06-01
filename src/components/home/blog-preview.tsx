@@ -37,7 +37,8 @@ export function BlogPreview() {
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Point of view</h2>
           <p className="text-muted-foreground text-lg">
-            Our thought leadership provides an inclusive platform for exploring insights and technological perspectives
+            Our thought leadership provides an inclusive platform for exploring
+            insights and technological perspectives
           </p>
         </div>
 
