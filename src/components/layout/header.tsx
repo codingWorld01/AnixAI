@@ -21,31 +21,31 @@ const servicesData = [
     children: [
       {
         title: "Generative AI Development",
-        href: "/generative-ai-development-company",
+        href: "/services/generative-ai-development",
       },
       {
         title: "Generative AI Consulting",
-        href: "/generative-ai-consulting-company",
+        href: "/services/generative-ai-consulting",
       },
       {
         title: "Enterprise Generative AI",
-        href: "/enterprise-generative-ai-development",
+        href: "/services/enterprise-generative-ai",
       },
-      { title: "AI Agent Development", href: "/ai-agents-development-company" },
-      { title: "LLM Development", href: "/llm-development-services" },
+      { title: "AI Agent Development", href: "/services/ai-agent-development" },
+      { title: "LLM Development", href: "/services/llm-development" },
       {
         title: "Generative AI Integration",
-        href: "/generative-ai-integration-services",
+        href: "/services/generative-ai-integration",
       },
       {
         title: "Adaptive AI Development",
-        href: "/adaptive-ai-development-services",
+        href: "/services/adaptive-ai-development",
       },
-      { title: "ChatGPT Developers", href: "/chatgpt-developers" },
-      { title: "Hire Prompt Engineers", href: "/hire-prompt-engineers" },
+      { title: "ChatGPT Developers", href: "/services/chatgpt-developers" },
+      { title: "Hire Prompt Engineers", href: "/services/hire-prompt-engineers" },
       {
         title: "ChatGPT Integration Services",
-        href: "/chatgpt-integration-service",
+        href: "/services/chatgpt-integration-services",
       },
     ],
   },
@@ -53,30 +53,30 @@ const servicesData = [
     title: "AI Development",
     href: "/services/ai-development",
     children: [
-      { title: "AI Development Services", href: "/ai-development-services" },
+      { title: "AI Development Services", href: "/services/ai-development" },
       {
         title: "Enterprise AI Development",
-        href: "/enterprise-ai-development-company",
+        href: "/services/enterprise-ai-development",
       },
-      { title: "AI Consulting Services", href: "/ai-consulting-services" },
+      { title: "AI Consulting Services", href: "/services/ai-consulting-services" },
       {
         title: "AI Chatbot Development",
-        href: "/ai-chatbot-development-services",
+        href: "/services/ai-chatbot-development",
       },
-      { title: "AI POC Development", href: "/ai-poc-development" },
-      { title: "AI Automation Services", href: "/ai-automation-services" },
-      { title: "AI Engineers", href: "/hire-ai-engineers" },
+      { title: "AI POC Development", href: "/services/ai-poc-development" },
+      { title: "AI Automation Services", href: "/services/ai-automation-services" },
+      { title: "AI Engineers", href: "/services/ai-engineers" },
       {
         title: "Enterprise AI Chatbot",
-        href: "/enterprise-ai-chatbot-development",
+        href: "/services/enterprise-ai-chatbot",
       },
       {
         title: "Computer Vision Development",
-        href: "/computer-vision-development-services",
+        href: "/services/computer-vision-development",
       },
       {
         title: "Conversational AI Development",
-        href: "/conversational-ai-development-services",
+        href: "/services/conversational-ai-development",
       },
     ],
   },
@@ -84,31 +84,31 @@ const servicesData = [
     title: "Data Engineering",
     href: "/services/data-engineering",
     children: [
-      { title: "Data Engineering", href: "/data-engineering-services" },
-      { title: "ML Model Engineering", href: "/ml-model-engineering-services" },
+      { title: "Data Engineering", href: "/services/data-engineering" },
+      { title: "ML Model Engineering", href: "/services/ml-model-engineering" },
       {
         title: "ML Development",
-        href: "/machine-learning-development-services",
+        href: "/services/ml-development",
       },
       {
         title: "MLOps Consulting Services",
-        href: "/mlops-consulting-services",
+        href: "/services/mlops-consulting-services",
       },
-      { title: "Cloud Services", href: "/cloud-application-development" },
+      { title: "Cloud Services", href: "/services/cloud-services" },
     ],
   },
 ];
 
 const industriesData = [
-  { title: "Healthcare", href: "/healthcare-ai-development" },
-  { title: "Retail", href: "/retail-ai-development" },
-  { title: "Fintech", href: "/fintech-ai-development" },
-  { title: "SaaS", href: "/saas-ai-development" },
-  { title: "Travel", href: "/travel-ai-development" },
-  { title: "Fitness", href: "/fitness-ai-development" },
-  { title: "Insurance", href: "/insurance-ai-development" },
-  { title: "Construction", href: "/construction-ai-development" },
-  { title: "Manufacturing", href: "/manufacturing-ai-development" },
+  { title: "Healthcare", href: "/industries/healthcare" },
+  { title: "Retail", href: "/industries/retail" },
+  { title: "Fintech", href: "/industries/fintech" },
+  { title: "SaaS", href: "/industries/saas" },
+  { title: "Travel", href: "/industries/travel" },
+  { title: "Fitness", href: "/industries/fitness" },
+  { title: "Insurance", href: "/industries/insurance" },
+  { title: "Construction", href: "/industries/construction" },
+  { title: "Manufacturing", href: "/industries/manufacturing" },
 ];
 
 export function Header() {
@@ -184,7 +184,7 @@ export function Header() {
           </nav>
         </div>
         <div className="flex items-center">
-          <Link href="/contact-us" className="hidden md:inline-flex">
+          <Link href="/contact" className="hidden md:inline-flex">
             <Button className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-white px-6 hover:opacity-90">
               Contact Us
             </Button>
@@ -382,7 +382,7 @@ export function Header() {
             >
               Resources
             </Link>
-            <Link href="/contact-us" onClick={closeMobileMenu}>
+            <Link href="/contact" onClick={closeMobileMenu}>
               <Button className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-white px-6 hover:opacity-90 w-full">
                 Contact Us
               </Button>

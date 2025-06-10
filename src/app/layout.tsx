@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import Chatbot from "@/components/Chatbot/Chatbot";
 
 export const metadata: Metadata = {
   title: "anixai | Generative AI Company Driving Innovation and Efficiency",
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className="flex min-h-screen flex-col">
         <Header />
         <main className="flex-1">{children}</main>
+        <Chatbot />
         <Footer />
       </body>
     </html>
