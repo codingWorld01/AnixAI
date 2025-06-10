@@ -9,49 +9,49 @@ const footerLinks = [
       { label: "Team", href: "/team" },
       { label: "Customers", href: "/customers" },
       { label: "Careers", href: "/careers" },
-      { label: "Contact Us", href: "/contact-us" },
+      { label: "Contact Us", href: "/contact" }, // Updated to match the actual route
     ],
   },
   {
     title: "Artificial Intelligence",
     links: [
-      { label: "AI Development Services", href: "/ai-development-services" },
-      { label: "Generative AI Development", href: "/generative-ai-development-company" },
-      { label: "AI Chatbot Development", href: "/ai-chatbot-development-services" },
-      { label: "AI Consulting Services", href: "/ai-consulting-services" },
-      { label: "Machine Learning Services", href: "/machine-learning-development-services" },
-      { label: "AI POC Development", href: "/ai-poc-development" },
-      { label: "MLOps Consulting Services", href: "/mlops-consulting-services" },
-      { label: "Computer Vision Development", href: "/computer-vision-development-services" },
-      { label: "AI Automation Services", href: "/ai-automation-services" },
+      { label: "AI Development Services", href: "/services/ai-development" },
+      { label: "Generative AI Development", href: "/services/generative-ai-development" },
+      { label: "AI Chatbot Development", href: "/services/ai-chatbot-development" },
+      { label: "AI Consulting Services", href: "/services/ai-consulting-services" },
+      { label: "Machine Learning Services", href: "/services/ml-development" },
+      { label: "AI POC Development", href: "/services/ai-poc-development" },
+      { label: "MLOps Consulting Services", href: "/services/mlops-consulting-services" },
+      { label: "Computer Vision Development", href: "/services/computer-vision-development" },
+      { label: "AI Automation Services", href: "/services/ai-automation-services" },
     ],
   },
   {
     title: "Services",
     links: [
-      { label: "Enterprise AI Development", href: "/enterprise-ai-development-company" },
-      { label: "Enterprise Generative AI", href: "/enterprise-generative-ai-development" },
-      { label: "Generative AI Consulting", href: "/generative-ai-consulting-company" },
-      { label: "AI Agents Development", href: "/ai-agents-development-company" },
-      { label: "Generative AI Integration", href: "/generative-ai-integration-services" },
-      { label: "LLM Development Services", href: "/llm-development-services" },
-      { label: "Adaptive AI Development", href: "/adaptive-ai-development-services" },
-      { label: "ChatGPT Development", href: "/chatgpt-developers" },
-      { label: "ChatGPT Integration", href: "/chatgpt-integration-service" },
+      { label: "Enterprise AI Development", href: "/services/enterprise-ai-development" },
+      { label: "Enterprise Generative AI", href: "/services/enterprise-generative-ai" },
+      { label: "Generative AI Consulting", href: "/services/generative-ai-consulting" },
+      { label: "AI Agents Development", href: "/services/ai-agent-development" },
+      { label: "Generative AI Integration", href: "/services/generative-ai-integration" },
+      { label: "LLM Development Services", href: "/services/llm-development" },
+      { label: "Adaptive AI Development", href: "/services/adaptive-ai-development" },
+      { label: "ChatGPT Development", href: "/services/chatgpt-developers" },
+      { label: "ChatGPT Integration", href: "/services/chatgpt-integration-services" },
     ],
   },
   {
     title: "Industries",
     links: [
-      { label: "Healthcare", href: "/healthcare-ai-development" },
-      { label: "Retail", href: "/retail-ai-development" },
-      { label: "Fintech", href: "/fintech-ai-development" },
-      { label: "SaaS", href: "/saas-ai-development" },
-      { label: "Travel", href: "/travel-ai-development" },
-      { label: "Fitness", href: "/fitness-ai-development" },
-      { label: "Insurance", href: "/insurance-ai-development" },
-      { label: "Construction", href: "/construction-ai-development" },
-      { label: "Manufacturing", href: "/manufacturing-ai-development" },
+      { label: "Healthcare", href: "/industries/healthcare" },
+      { label: "Retail", href: "/industries/retail" },
+      { label: "Fintech", href: "/industries/fintech" },
+      { label: "SaaS", href: "/industries/saas" },
+      { label: "Travel", href: "/industries/travel" },
+      { label: "Fitness", href: "/industries/fitness" },
+      { label: "Insurance", href: "/industries/insurance" },
+      { label: "Construction", href: "/industries/construction" },
+      { label: "Manufacturing", href: "/industries/manufacturing" },
     ],
   },
   {
@@ -70,8 +70,8 @@ const footerLinks = [
 ];
 
 const socialLinks = [
-  { name: "LinkedIn", href: "https://www.linkedin.com/company/anixai" },
-  { name: "Twitter", href: "https://twitter.com/anixai" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/anixai", ariaLabel: "Follow Anix AI on LinkedIn" },
+  { name: "Twitter", href: "https://twitter.com/anixai", ariaLabel: "Follow Anix AI on Twitter" },
 ];
 
 export function Footer() {
@@ -83,7 +83,7 @@ export function Footer() {
             <Link href="/" className="inline-block mb-6">
               <Image
                 src="/images/anixlogo.png"
-                alt="anixai Logo"
+                alt="Anix AI Logo"
                 width={180}
                 height={45}
                 className="h-20 w-auto"
@@ -100,6 +100,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-anixai-blue"
+                  aria-label={social.ariaLabel}
                 >
                   {social.name === "LinkedIn" ? (
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -122,7 +123,10 @@ export function Footer() {
                 <ul className="space-y-2">
                   {column.links.map((link) => (
                     <li key={link.label}>
-                      <Link href={link.href} className="text-xs text-muted-foreground hover:text-anixai-blue transition-colors">
+                      <Link
+                        href={link.href}
+                        className="text-xs text-muted-foreground hover:text-anixai-blue transition-colors"
+                      >
                         {link.label}
                       </Link>
                     </li>
@@ -135,17 +139,43 @@ export function Footer() {
 
         <div className="border-t border-border/40 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-xs text-muted-foreground mb-4 md:mb-0">
-            anixai Inc. | Copyright 2024 | Privacy Policy | Sitemap
+            Anix AI Inc. | Copyright 2024 | Privacy Policy | Sitemap
           </p>
           <div className="flex space-x-4">
-            <button className="text-muted-foreground hover:text-white transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <button
+              className="text-muted-foreground hover:text-white transition-colors"
+              aria-label="Information"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <circle cx="12" cy="12" r="10" />
                 <path d="M12 8v4M12 16h.01" />
               </svg>
             </button>
-            <button className="text-muted-foreground hover:text-white transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <button
+              className="text-muted-foreground hover:text-white transition-colors"
+              aria-label="Close"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <circle cx="12" cy="12" r="10" />
                 <path d="m15 9-6 6M9 9l6 6" />
               </svg>
