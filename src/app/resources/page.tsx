@@ -1,92 +1,41 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 import Image from "next/image";
 import { BlogPreview } from "@/components/home/blog-preview";
-
-interface Resource {
-  id: string;
-  imageSrc: string;
-  alt: string;
-  title: string;
-  description: string;
-  downloadUrl: string;
-}
-
-const resources: Resource[] = [
-  {
-    id: "1",
-    imageSrc:
-      "https://markovate.com/wp-content/uploads/2024/04/resource-ebook-img.webp",
-    alt: "eBook Cover: Navigating Custom AI Development",
-    title:
-      "Navigating Custom AI Development vs. Pre-Existing AI Solutions: A Comprehensive Guide for Businesses",
-    description: "Crafting an Effective AI Strategy",
-    downloadUrl: "/downloads/ebook-navigating-custom-ai.pdf",
-  },
-  {
-    id: "2",
-    imageSrc:
-      "https://markovate.com/wp-content/uploads/2024/04/Crafting-an-Effective-AI-Strategy_.webp",
-    alt: "Handbook Cover: AI Strategy Ethics and Security",
-    title: "AI Strategy: Prioritizing Ethics and Security for Growth",
-    description:
-      "A detailed handbook on building AI strategies that prioritize ethics and security, ensuring sustainable business growth while addressing key challenges.",
-    downloadUrl: "/downloads/handbook-ai-strategy-ethics-security.pdf",
-  },
-  {
-    id: "3",
-    imageSrc:
-      "https://markovate.com/wp-content/uploads/2024/04/Maximizing-Business-Efficiency-with-AI-Chatbots-in-ERP-systems-banner.webp",
-    alt: "Infographic: AI Chatbots in ERP Systems",
-    title: "Maximizing Business Efficiency with AI Chatbots in ERP Systems",
-    description:
-      "An insightful infographic illustrating how AI chatbots integrated with ERP systems can streamline operations and enhance productivity for businesses.",
-    downloadUrl: "/downloads/infographic-ai-chatbots-erp.pdf",
-  },
-];
+import { resources, Resource } from "@/data/resources";
 
 export default function ResourcesPage() {
   return (
     <section className="bg-background min-h-screen">
       <div className="container px-4 md:px-8 pt-20">
         <h1 className="text-3xl md:text-4xl font-bold mb-12 text-center text-foreground">
-          Resources at AnixAI
+          Resources at Anix AI
         </h1>
 
         {/* Resources Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {resources.map((resource) => (
-            <Card
-              key={resource.id}
-              className="border-border/40 bg-card/60 overflow-hidden"
-            >
-              <Image
-                src={resource.imageSrc}
-                alt={resource.alt}
-                width={400}
-                height={200}
-                className="w-full h-60 object-cover"
-              />
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-foreground">
-                  {resource.title}
-                </h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {resource.description}
-                </p>
-
-                <Link href={resource.downloadUrl}>
-                  <button className=" relative inline-flex items-center justify-center p-0.5 me-2 overflow-hidden text-sm font-medium text-white rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-                    <span className=" relative px-5 py-2.5 transition-all ease-in duration-75 bg-black dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
-                      Download Now
-                    </span>
-                  </button>
-                </Link>
-              </CardContent>
-            </Card>
+            <Link href={`/resources/${resource.id}`} key={resource.id}>
+              <Card className="border-border/40 bg-card/60 overflow-hidden hover:shadow-lg transition-shadow">
+                <Image
+                  src={resource.imageSrc}
+                  alt={resource.alt}
+                  width={400}
+                  height={200}
+                  className="w-full h-60 object-cover"
+                />
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold mb-2 text-foreground">
+                    {resource.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    {resource.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
 

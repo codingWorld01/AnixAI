@@ -184,7 +184,7 @@ export function Header() {
           </nav>
         </div>
         <div className="flex items-center">
-          <Link href="/contact" className="hidden md:inline-flex">
+          <Link href="/contact-us" className="hidden md:inline-flex">
             <Button className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-white px-6 hover:opacity-90">
               Contact Us
             </Button>
