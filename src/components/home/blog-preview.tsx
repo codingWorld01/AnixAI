@@ -21,7 +21,7 @@ export function BlogPreview() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {previewPosts.map((post) => (
-            <Link href={`/blog/${post.id}`} key={post.id} className="block group">
+            <Link href={`/blog/${post.slug}`} key={post.id} className="block group">
               <Card className="border-border/40 bg-card/60 overflow-hidden h-full transition-transform duration-300 group-hover:scale-[1.02]">
                 <div className="relative h-52 overflow-hidden">
                   <Image

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { industries, Industry } from "@/data/industries";
 import { Metadata } from "next";
+import ComingSoonLottie from "@/components/animations/lottie-animation";
 
 // Generate static params for pre-rendering all industry pages
 export async function generateStaticParams() {
@@ -13,10 +14,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { industry: string };
+  params: Promise<{ industry: string }>;
 }): Promise<Metadata> {
-  // Ensure params.industry is accessed safely
-  const industrySlug = params.industry;
+  // Await the params to access the industry slug
+  const { industry: industrySlug } = await params;
   const industry = industries.find((i) => i.slug === industrySlug);
 
   if (!industry) {
@@ -32,15 +33,16 @@ export async function generateMetadata({
   };
 }
 
-// Since this is a Server Component, params should be available directly
-export default function IndustryPage({
+// Since this is a Server Component, params should be awaited in newer Next.js versions
+export default async function IndustryPage({
   params,
 }: {
-  params: { industry: string };
+  params: Promise<{ industry: string }>;
 }) {
-  // Access params.industry directly
+  // Await the params to access the industry slug
+  const { industry: industrySlug } = await params;
   const industry: Industry | undefined = industries.find(
-    (i) => i.slug === params.industry
+    (i) => i.slug === industrySlug
   );
 
   if (!industry) {
@@ -48,9 +50,9 @@ export default function IndustryPage({
   }
 
   return (
-    <section className="pt-20 pb-16 bg-background">
+    <section className="pt-20 pb-16 bg-background min-h-screen">
       <div className="container px-4 md:px-8">
-        <div className="text-center max-w-4xl mx-auto mb-16">
+        <div className="text-center max-w-4xl mx-auto ">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             {industry.title}
           </h1>
@@ -58,11 +60,20 @@ export default function IndustryPage({
             {industry.description}
           </p>
         </div>
-        {/* Add more sections as needed, e.g., use cases, benefits, CTA */}
+
+        {/* Coming Soon Lottie Animation */}
+        <div className="mb-10">
+          <ComingSoonLottie />
+          <p className="text-center text-muted-foreground text-lg mt-6 max-w-2xl mx-auto">
+            We’re working hard to bring you detailed insights for the {industry.title.toLowerCase()} industry. Stay tuned for updates!
+          </p>
+        </div>
+
+        {/* Call to Action */}
         <div className="text-center">
           <a
             href="/contact-us"
-            className="inline-block bg-gradient text-white px-6 py-3 rounded-full hover:opacity-90"
+            className="inline-block bg-gradient text-white px-8 py-4 rounded-full hover:opacity-90 text-lg font-semibold"
           >
             Get in Touch
           </a>
