@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Metadata } from "next";
 import { workProjects, WorkProject } from "@/data/workProjects";
+import AIConsultingCTA from "@/components/home/ai-consulting-cta";
 
 // Generate static params for pre-rendering
 export async function generateStaticParams() {
@@ -165,7 +166,7 @@ export default async function WorkProjectDetailPage({
         </div>
 
         {/* Similar Solutions Section */}
-        <div className="mb-20">
+        <div className="mb-5">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
             Similar Solutions We Can Build for Your Business
           </h2>
@@ -198,6 +199,7 @@ export default async function WorkProjectDetailPage({
             ))}
           </div>
         </div>
+        <AIConsultingCTA />
       </div>
     </section>
   );

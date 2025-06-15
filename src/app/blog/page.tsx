@@ -16,15 +16,16 @@ export default async function BlogPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {blogPosts.map((post: BlogPost) => (
             <Link href={`/blog/${post.slug}`} key={post.id}>
-              <Card className="border-border/40 bg-card/60 overflow-hidden hover:shadow-lg transition-shadow">
+              <Card className="group border-border/40 bg-card/60 overflow-hidden hover:shadow-lg transition-shadow">
                 {post.imageSrc && (
-                  <Image
-                    src={post.imageSrc}
-                    alt={post.alt}
-                    width={400}
-                    height={200}
-                    className="w-full h-60 object-cover"
-                  />
+                  <div className="relative w-full h-60 overflow-hidden">
+                    <Image
+                      src={post.imageSrc}
+                      alt={post.alt}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
                 )}
                 <CardContent className="p-6">
                   <div className="flex items-center gap-2 mb-2">

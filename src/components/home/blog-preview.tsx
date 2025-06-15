@@ -31,7 +31,7 @@ export function BlogPreview() {
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent z-10" />
-                  <div className="absolute bottom-4 left-4 z-20">
+                  <div className="absolute bottom-4 l eft-4 z-20">
                     <span className="text-xs inline-block rounded-full px-2.5 py-0.5 bg-anixai-blue/10 text-anixai-blue font-medium">
                       {post.category}
                     </span>

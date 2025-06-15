@@ -11,12 +11,10 @@ export default function ComingSoonLottie() {
     fetch("/animations/coming-soon-white.json")
       .then((response) => response.json())
       .then((data) => setAnimationData(data))
-      .catch((error) => console.error("Error loading Lottie animation:", error));
+      .catch((error) =>
+        console.error("Error loading Lottie animation:", error)
+      );
   }, []);
-
-  if (!animationData) {
-    return <div className="text-center text-muted-foreground">Loading animation...</div>;
-  }
 
   return (
     <div className="max-w-md mx-auto my-12">

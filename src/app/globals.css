@@ -170,3 +170,14 @@
 .overflow-hidden {
   overflow: hidden;
 }
+
+.gradient-blur {
+  background: radial-gradient(
+    circle farthest-corner at center,
+    rgba(59, 130, 246, 0.4) 0%, /* Vibrant blue in the center */
+    rgba(168, 85, 247, 0.3) 40%, /* Purple transition */
+    rgba(0, 0, 0, 0.7) 100% /* Blackish at the ends */
+  );
+  filter: blur(60px); /* Slightly softer blur */
+  opacity: 0.6; /* Slightly less opaque for subtlety */
+}

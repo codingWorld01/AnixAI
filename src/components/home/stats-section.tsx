@@ -84,7 +84,7 @@ export function StatsSection() {
           </h2>
           <p className="text-muted-foreground text-lg">
             As industry leaders, we bring a deep understanding of AI, Generative AI, Agentic AI, Chatbots, and Cloud technologies. Our skilled team of data scientists, engineers, developers, and MLOps specialists build scalable, end-to-end solutions tailored to your needs. We ensure measurable impacts, prioritize data security, and support you fully from pre-processing data to technology evaluation, delivering solutions that grow with your business.{" "}
-            <Link href="/learn-more" className="text-white font-bold hover:underline">
+            <Link href="/company" className="text-white font-bold hover:underline">
               Learn more →
             </Link>
           </p>

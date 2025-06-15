@@ -18,13 +18,13 @@ export default function ResourcesPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {resources.map((resource) => (
             <Link href={`/resources/${resource.id}`} key={resource.id}>
-              <Card className="border-border/40 bg-card/60 overflow-hidden hover:shadow-lg transition-shadow">
+              <Card className="group border-border/40 bg-card/60 overflow-hidden hover:shadow-lg transition-shadow">
                 <Image
                   src={resource.imageSrc}
                   alt={resource.alt}
                   width={400}
                   height={200}
-                  className="w-full h-60 object-cover"
+                  className="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-2 text-foreground">

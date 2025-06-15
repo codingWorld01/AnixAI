@@ -10,7 +10,8 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const solutions = [
   {
-    title: "Accelerated Claim Processing with an Intelligent Medical Coding Solution",
+    title:
+      "Accelerated Claim Processing with an Intelligent Medical Coding Solution",
     description:
       "A leading healthcare company wanted to modernize medical claim processing. We built an AI solution that can understand medical documentation, extract relevant information, and automatically code claims using ICD-10 and CPT/HCPCS codes.",
     image: "/images/img1.webp",
@@ -19,7 +20,7 @@ const solutions = [
     quote:
       "This AI solution has transformed our claims processing, saving us countless hours and improving accuracy.",
     quoteAuthor: "Jane Doe, CTO at HealthCare Inc.",
-    link: "/case-studies/claim-processing",
+    link: "/work",
   },
   {
     title: "Streamline Your AI Operations",
@@ -31,7 +32,7 @@ const solutions = [
     quote:
       "The MLOps solution streamlined our operations, allowing us to scale AI initiatives effortlessly.",
     quoteAuthor: "John Smith, Head of AI at TechCorp",
-    link: "/services/mlops",
+    link: "/work",
   },
   {
     title: "AI Agents to Supercharge Your Business",
@@ -43,13 +44,12 @@ const solutions = [
     quote:
       "These AI agents have been a game-changer for our customer support team, providing 24/7 assistance.",
     quoteAuthor: "Emily Brown, CEO at SupportSys",
-    link: "/services/ai-agents",
+    link: "/work",
   },
 ];
 
 export function AISolutions() {
   const [currentIndex, setCurrentIndex] = useState(0);
-
 
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev === 0 ? solutions.length - 1 : prev - 1));
@@ -67,7 +67,8 @@ export function AISolutions() {
             AI Solutions We Have Built for Our Clients
           </h2>
           <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto">
-            Discover how our AI solutions have empowered businesses to achieve measurable growth and efficiency.
+            Discover how our AI solutions have empowered businesses to achieve
+            measurable growth and efficiency.
           </p>
         </div>
 
@@ -77,14 +78,14 @@ export function AISolutions() {
           <div className="absolute top-0 right-2 flex space-x-2 z-10">
             <button
               onClick={handlePrev}
-              className="bg-anixai-blue/80 text-white p-3 rounded-full hover:bg-anixai-blue"
+              className="border bg-gradient-to-br border-blue-500 hover:from-purple-600 hover:to-blue-500 text-white p-3 rounded-full hover:bg-anixai-blue"
               aria-label="Previous case study"
             >
               <ChevronLeft size={24} />
             </button>
             <button
               onClick={handleNext}
-              className="bg-anixai-blue/80 text-white p-3 rounded-full hover:bg-anixai-blue"
+              className="bg-gradient-to-br from-purple-600 to-blue-500 hover:from-purple-600 hover:to-blue-500 text-white p-3 rounded-full hover:bg-anixai-blue"
               aria-label="Next case study"
             >
               <ChevronRight size={24} />
@@ -107,7 +108,9 @@ export function AISolutions() {
                     <div className="p-6 flex flex-col justify-between h-full">
                       <div>
                         <div className="mb-4 inline-block bg-anixai-blue/10 px-3 py-1 rounded-full">
-                          <span className="text-anixai-blue text-sm font-medium">Case Study</span>
+                          <span className="text-anixai-blue text-sm font-medium">
+                            Case Study
+                          </span>
                         </div>
                         <br />
 
@@ -138,7 +141,7 @@ export function AISolutions() {
                       <Link href={solutions[currentIndex].link}>
                         <Button
                           variant="outline"
-                          className="mt-4 rounded-full border-anixai-blue text-anixai-blue hover:bg-anixai-blue hover:text-white"
+                          className="mt-4 rounded-full border-anixai-blue text-foreground hover:bg-anixai-blue hover:text-white"
                         >
                           View Case Study
                         </Button>
@@ -167,7 +170,6 @@ export function AISolutions() {
                 Know more about our work
               </span>
             </button>
-
           </Link>
         </div>
       </div>

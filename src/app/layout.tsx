@@ -3,6 +3,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import Chatbot from "@/components/Chatbot/Chatbot";
+import GoToTop from "@/components/home/go-to-top";
 
 export const metadata: Metadata = {
   title: "anixai | Generative AI Company Driving Innovation and Efficiency",
@@ -24,6 +25,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Chatbot />
+        <GoToTop />
         <Footer />
       </body>
     </html>

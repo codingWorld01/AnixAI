@@ -8,21 +8,21 @@ export default async function WorkPage() {
     <section className="pt-20 pb-16 bg-background min-h-screen">
       <div className="container px-4 md:px-8">
         <h1 className="text-3xl md:text-4xl font-bold mb-12 text-center text-foreground">
-          Our Work at Anix AI
+          Digital solutions we’ve engineered
         </h1>
 
         {/* Work Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {workProjects.map((project: WorkProject) => (
             <Link href={`/work/${project.slug}`} key={project.id}>
-              <Card className="border-border/40 bg-card/60 overflow-hidden hover:shadow-lg transition-shadow">
+              <Card className="border-border/40 bg-card/60 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
                 {project.imageSrc && (
                   <Image
                     src={project.imageSrc}
                     alt={project.imageAlt}
                     width={400}
                     height={200}
-                    className="w-full h-60 object-cover"
+                    className="w-full h-full object-cover transition-all duration-300 hover:brightness-110"
                   />
                 )}
                 <CardContent className="p-6">
