@@ -5,7 +5,7 @@ export interface Resource {
   title: string;
   description: string;
   downloadUrl: string;
-  topicsCovered: string[]; // Added for topics covered section
+  topicsCovered: string[]; 
 }
 
 export const resources: Resource[] = [

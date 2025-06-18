@@ -33,7 +33,7 @@ export default function GoToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-24 right-6 p-4 bg-primary text-white rounded-full shadow-lg transition-opacity duration-300 z-40 sm:bottom-28 ${
+      className={`fixed bottom-24 right-7 p-4 bg-primary text-white rounded-full shadow-lg transition-opacity duration-300 z-40 sm:bottom-28 ${
         isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
       } hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2`}
       aria-label="Go to top"
