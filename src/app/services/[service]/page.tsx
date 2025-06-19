@@ -56,16 +56,15 @@ export default async function ServicePage({
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             {service.title}
           </h1>
-          <p className="text-muted-foreground text-lg">
-            {service.description}
-          </p>
+          <p className="text-muted-foreground text-lg">{service.description}</p>
         </div>
 
         {/* Coming Soon Lottie Animation */}
         <div className="mb-10">
           <ComingSoonLottie />
           <p className="text-center text-muted-foreground text-lg mt-6 max-w-2xl mx-auto">
-            We’re working hard to bring you detailed insights about our {service.title.toLowerCase()} services. Stay tuned for updates!
+            We’re working hard to bring you detailed insights about our{" "}
+            {service.title.toLowerCase()} services. Stay tuned for updates!
           </p>
         </div>
 

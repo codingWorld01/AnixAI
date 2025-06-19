@@ -42,7 +42,10 @@ const servicesData = [
         href: "/services/adaptive-ai-development",
       },
       { title: "ChatGPT Developers", href: "/services/chatgpt-developers" },
-      { title: "Hire Prompt Engineers", href: "/services/hire-prompt-engineers" },
+      {
+        title: "Hire Prompt Engineers",
+        href: "/services/hire-prompt-engineers",
+      },
       {
         title: "ChatGPT Integration Services",
         href: "/services/chatgpt-integration-services",
@@ -58,13 +61,19 @@ const servicesData = [
         title: "Enterprise AI Development",
         href: "/services/enterprise-ai-development",
       },
-      { title: "AI Consulting Services", href: "/services/ai-consulting-services" },
+      {
+        title: "AI Consulting Services",
+        href: "/services/ai-consulting-services",
+      },
       {
         title: "AI Chatbot Development",
         href: "/services/ai-chatbot-development",
       },
       { title: "AI POC Development", href: "/services/ai-poc-development" },
-      { title: "AI Automation Services", href: "/services/ai-automation-services" },
+      {
+        title: "AI Automation Services",
+        href: "/services/ai-automation-services",
+      },
       { title: "AI Engineers", href: "/services/ai-engineers" },
       {
         title: "Enterprise AI Chatbot",
@@ -154,8 +163,14 @@ export function Header() {
               priority
             />
           </Link>
-          <nav className="hidden md:flex items-center space-x-4">
-            <ServicesNav />
+          <nav className="md:ml-4 hidden md:flex items-center space-x-4">
+            {/* <ServicesNav /> */}
+            <Link
+              href="/services"
+              className="text-sm font-medium text-foreground hover:text-anixai-blue transition-colors"
+            >
+              Services
+            </Link>
             <IndustriesNav />
             <Link
               href="/work"
@@ -405,9 +420,7 @@ const ServicesNav = () => (
           <div className="grid grid-cols-3 gap-3 md:w-[600px] lg:w-[800px] pl-5 pb-5">
             {servicesData.map((section) => (
               <div key={section.title} className="space-y-2 mt-4">
-                <h3 className="font-medium text-blue-500">
-                  {section.title}
-                </h3>
+                <h3 className="font-medium text-blue-500">{section.title}</h3>
                 <ul className="space-y-1">
                   {section.children.map((item) => (
                     <li key={item.title}>
