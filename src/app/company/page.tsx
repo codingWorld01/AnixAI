@@ -165,9 +165,9 @@ export default function CompanyPage() {
                     Our Mission
                   </h3>
                   <p className="text-muted-foreground">
-                    To empower businesses with AI-driven solutions that simplify
-                    complex challenges, foster innovation, and create lasting
-                    impact.
+                    Make AI practical, secure, and scalable for real-world
+                    impact — empowering analysts, advisors, and enterprises with
+                    transformative tools for the future of work.
                   </p>
                 </CardContent>
               </Card>
@@ -179,9 +179,8 @@ export default function CompanyPage() {
                     Our Vision
                   </h3>
                   <p className="text-muted-foreground">
-                    To be the global leader in AI and technology solutions,
-                    transforming industries and shaping a smarter, more
-                    connected future.
+                    To be the world's most trusted AI solutions partner for
+                    enterprises building the future.
                   </p>
                 </CardContent>
               </Card>
@@ -243,7 +242,7 @@ export default function CompanyPage() {
                   className="w-full lg:h-[30rem] rounded-lg"
                 />
                 <a
-                  href="https://linkedin.com/in/"
+                  href="https://www.linkedin.com/in/dr-aniket-mhala-560abaa/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="absolute bottom-4 right-4 bg-gradient-to-br from-purple-600 to-blue-500 p-2 rounded-full hover:scale-110 transition-transform duration-300"
@@ -270,7 +269,7 @@ export default function CompanyPage() {
                   className="w-full lg:h-[30rem] rounded-lg"
                 />
                 <a
-                  href="https://linkedin.com/in/"
+                  href="https://www.linkedin.com/in/dr-aniket-mhala-560abaa/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="absolute bottom-4 right-4 bg-gradient-to-br from-purple-600 to-blue-500 p-2 rounded-full hover:scale-110 transition-transform duration-300"
@@ -294,19 +293,14 @@ export default function CompanyPage() {
                 About Aniket Mhala
               </h2>
               <p className="text-muted-foreground lg:text-xl mb-6">
-                Rajeev Sharma is the Co-Founder & CEO of Markovate, a visionary
-                technologist and business leader committed to leveraging
-                AI-driven solutions for complex business challenges. With 18+
-                years of experience, he has collaborated with leaders like AT&T
-                and IBM, spearheading transformative initiatives in AI, cloud
-                computing, and mobile. Rajeev has led teams in designing &
-                delivering large-scale projects, focusing on Agentic AI, ML, and
-                Deep Learning to unlock new business opportunities. He works
-                closely with organizations, helping them harness these
-                technologies to drive innovation, optimize operations, and
-                achieve growth. Under his leadership, Markovate continues to
-                develop tailored AI solutions that deliver measurable business
-                impact.
+                Dr. Aniket Mhala, a recognized AI Thought Leader with over 28
+                years of distinguished leadership in the IT industry, brings a
+                wealth of expertise in driving digital transformation and
+                strategic innovation. As the founder and driving force behind
+                Anix AI, he is deeply committed to delivering exceptional
+                customer success, ensuring robust security, and pioneering
+                practical, forward-looking AI solutions that empower businesses
+                across industries.
               </p>
             </div>
           </div>
