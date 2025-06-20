@@ -249,7 +249,7 @@ export function Header() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-background border-b border-border/40 absolute top-16 left-0 w-full z-40">
           <nav className="flex flex-col items-start p-4 space-y-4">
-            {/* Services Dropdown */}
+            {/* Services Dropdown
             <div className="w-full">
               <button
                 className="text-sm font-medium text-foreground hover:text-anixai-blue transition-colors w-full text-left flex justify-between items-center"
@@ -327,8 +327,16 @@ export function Header() {
                   ))}
                 </div>
               )}
-            </div>
+            </div> */}
 
+            <Link
+              href="/services"
+              className="text-sm font-medium text-foreground hover:text-anixai-blue transition-colors"
+              onClick={closeMobileMenu}
+            >
+              Services
+            </Link>
+            
             {/* Industries Dropdown */}
             <div className="w-full">
               <button

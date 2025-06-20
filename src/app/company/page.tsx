@@ -226,7 +226,6 @@ export default function CompanyPage() {
           </div>
         </div>
 
-
         <div className="mb-16">
           <h1 className="lg:text-5xl text-4xl mb-6">Team leaders</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
