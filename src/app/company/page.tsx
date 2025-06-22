@@ -116,14 +116,12 @@ export default function CompanyPage() {
             </div>
             <div className="max-w-3xl text-center mb-12">
               <p className="text-muted-foreground">
-                We collaborate with forward-thinking leaders, providing
-                strategic insights that will reshape tomorrow. Our team of AI
-                engineers, developers, and data scientists supports clients
-                through their digital transformation, enhancing capabilities
-                throughout their organization. With over 200 innovative
-                solutions delivered and counting, we are dedicated to empowering
-                businesses with cutting-edge technologies for a future-proof
-                world.
+                We collaborate with visionary leaders to deliver strategic
+                insights that will reshape tomorrow. Our specialised team of AI
+                engineers, developers and data scientists guides clients through
+                digital transformation, unlocking potential across every level
+                of their organization. We are dedicated to empowering businesses
+                with cutting-edge technologies for a future-proof world.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-20 max-w-5xl mx-auto">
@@ -194,16 +192,17 @@ export default function CompanyPage() {
             {/* Text Column */}
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-                Expertise across a range of technologies
+                Powering Innovation with a Future-Ready Tech Stack
               </h2>
               <p className="text-muted-foreground mb-6">
-                Markovate relies on an advanced suite of technologies like AI,
-                ML, Generative AI, Blockchain, Web3, Mobile and more, to drive
-                innovation. Incorporating machine learning frameworks, cloud
-                computing, and data analytics tools, our tech stack is designed
-                for scalability, reliability, and optimum performance. It’s the
-                backbone that ensures each software solution we deliver meets
-                industry standards and exceeds client expectations.
+                At ANIX AI, we use powerful technologies like Artificial
+                Intelligence (AI), Machine Learning (ML), Generative AI,
+                Blockchain, Web3, and Mobile solutions to bring bold ideas to
+                life. Our tech stack combines cloud computing, machine learning
+                frameworks, and advanced data analytics tools — built for
+                scalability, speed, and reliability. It's the foundation that
+                helps us deliver high-quality, future-ready software that meets
+                industry standards and goes beyond client expectations.
               </p>
               <Link href="/contact-us">
                 <button className="relative inline-flex items-center justify-center p-0.5 me-2 overflow-hidden text-sm font-medium text-white rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">

@@ -26,8 +26,10 @@
     "axios": "^1.9.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dotenv": "^16.5.0",
     "framer-motion": "^12.15.0",
     "gsap": "^3.13.0",
+    "imapflow": "^1.0.188",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.475.0",
     "next": "^15.2.0",
@@ -48,6 +50,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@eslint/eslintrc": "^3",
+    "@types/imapflow": "^1.0.22",
     "@types/node": "^20",
     "@types/nodemailer": "^6.4.17",
     "@types/react": "^18.3.18",

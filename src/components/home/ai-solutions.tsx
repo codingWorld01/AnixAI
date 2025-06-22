@@ -64,11 +64,11 @@ export function AISolutions() {
       <div className="container px-4 md:px-8">
         <div className="text-center mb-1">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">
-            AI Solutions We Have Built for Our Clients
+            AI Solutions Crafted for Our Clients
           </h2>
           <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto">
-            Discover how our AI solutions have empowered businesses to achieve
-            measurable growth and efficiency.
+            Explore how our tailored AI solutions have helped businesses grow
+            smarter, faster, and more efficiently.
           </p>
         </div>
 
