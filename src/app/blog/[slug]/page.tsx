@@ -89,7 +89,7 @@ export default async function BlogPostDetailPage({
                 alt={block.data.caption || "Blog image"}
                 width={800}
                 height={400}
-                className="w-1/2 rounded-lg shadow-md"
+                className="w-full md:w-1/2 rounded-lg shadow-md"
               />
               {block.data.caption && (
                 <p className="text-sm text-muted-foreground mt-3 text-center italic">
@@ -124,34 +124,57 @@ export default async function BlogPostDetailPage({
       <div className="container px-4 md:px-8">
         {/* Blog Post Details */}
         <div className="max-w-4xl mx-auto">
-          <center>
-            {post.imageSrc && (
-              <Image
-                src={post.imageSrc}
-                alt={post.alt}
-                width={800}
-                height={400}
-                className="w-1/2 h-1/2 object-cover rounded-lg shadow-lg mb-10"
-              />
-            )}
-          </center>
-          <div className="flex items-center gap-4 mb-4">
-            <p className="text-sm text-muted-foreground">
-              {new Date(post.date).toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
-            </p>
-            <span className="text-sm text-muted-foreground">•</span>
-            <p className="text-sm text-muted-foreground">By {post.author}</p>
-            <span className="text-sm text-muted-foreground">•</span>
-            <p className="text-sm text-muted-foreground">{post.category}</p>
+          {/* Header Section with Image on Right, Title/Tags on Left */}
+          <div className="flex flex-row flex-wrap items-start justify-between gap-6 mb-10">
+            {/* Left Side: Title, Metadata, and Tags */}
+            <div className="w-full md:w-[45%]">
+              <div className="flex items-center gap-4 mb-4">
+                <p className="text-sm text-muted-foreground">
+                  {new Date(post.date).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </p>
+                <span className="text-sm text-muted-foreground">•</span>
+                <p className="text-sm text-muted-foreground">
+                  By {post.author}
+                </p>
+                <span className="text-sm text-muted-foreground">•</span>
+                <p className="text-sm text-muted-foreground">{post.category}</p>
+              </div>
+              <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                {post.title}
+              </h1>
+              {post.tags && post.tags.length > 0 && (
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {post.tags.map((tag, index) => (
+                    <span
+                      key={index}
+                      className="bg-muted text-muted-foreground text-xs px-3 py-1 rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Right Side: Image */}
+            <div className="w-full md:w-[50%]">
+              {post.imageSrc && (
+                <Image
+                  src={post.imageSrc}
+                  alt={post.alt}
+                  width={800}
+                  height={400}
+                  className="w-full h-auto md:h-80 rounded-lg shadow-lg"
+                />
+              )}
+            </div>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            {post.title}
-          </h1>
-          <p className="text-lg text-foreground leading-relaxed mb-10">
+
+          <p className="text-lg text-foreground leading-relaxed">
             {post.description}
           </p>
 
@@ -161,20 +184,6 @@ export default async function BlogPostDetailPage({
               <div key={index}>{renderBlock(block)}</div>
             ))}
           </div>
-
-          {/* Tags */}
-          {post.tags && post.tags.length > 0 && (
-            <div className="flex flex-wrap gap-2 mb-10">
-              {post.tags.map((tag, index) => (
-                <span
-                  key={index}
-                  className="bg-muted text-muted-foreground text-xs px-3 py-1 rounded-full"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
 
           {/* Back to Blog Page Button */}
           <div className="text-center">
