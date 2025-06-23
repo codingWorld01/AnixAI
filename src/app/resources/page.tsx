@@ -11,7 +11,7 @@ export default function ResourcesPage() {
     <section className="bg-background min-h-screen">
       <div className="container px-4 md:px-8 pt-20">
         <h1 className="text-3xl md:text-4xl font-bold mb-12 text-center text-foreground">
-          Resources at Anix AI
+          Learning with Anix AI
         </h1>
 
         {/* Resources Grid */}

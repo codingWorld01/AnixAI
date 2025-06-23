@@ -9,7 +9,7 @@ export default async function BlogPage() {
     <section className="pb-16 bg-background min-h-screen">
       <div className="container px-4 md:px-8 pt-20 mb-8">
         <h1 className="text-3xl md:text-4xl font-bold mb-12 text-center text-foreground">
-          Our Blog at Anix AI
+          Insights from Anix AI
         </h1>
 
         {/* Blog Post Grid */}
@@ -23,7 +23,7 @@ export default async function BlogPage() {
                       src={post.imageSrc}
                       alt={post.alt}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="transition-transform duration-500 group-hover:scale-110"
                     />
                   </div>
                 )}
@@ -43,7 +43,9 @@ export default async function BlogPage() {
                   <h3 className="text-xl font-semibold mb-2 text-foreground">
                     {post.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground line-clamp-3">{post.description}</p>
+                  <p className="text-sm text-muted-foreground line-clamp-3">
+                    {post.description}
+                  </p>
                 </CardContent>
               </Card>
             </Link>

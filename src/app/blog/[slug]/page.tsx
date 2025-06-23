@@ -83,18 +83,20 @@ export default async function BlogPostDetailPage({
       case "image":
         return (
           <div className="my-10">
-            <Image
-              src={block.data.file.url}
-              alt={block.data.caption || "Blog image"}
-              width={800}
-              height={400}
-              className="w-full h-auto rounded-lg shadow-md"
-            />
-            {block.data.caption && (
-              <p className="text-sm text-muted-foreground mt-3 text-center italic">
-                {block.data.caption}
-              </p>
-            )}
+            <center>
+              <Image
+                src={block.data.file.url}
+                alt={block.data.caption || "Blog image"}
+                width={800}
+                height={400}
+                className="w-1/2 rounded-lg shadow-md"
+              />
+              {block.data.caption && (
+                <p className="text-sm text-muted-foreground mt-3 text-center italic">
+                  {block.data.caption}
+                </p>
+              )}
+            </center>
           </div>
         );
       case "list":
@@ -122,15 +124,17 @@ export default async function BlogPostDetailPage({
       <div className="container px-4 md:px-8">
         {/* Blog Post Details */}
         <div className="max-w-4xl mx-auto">
-          {post.imageSrc && (
-            <Image
-              src={post.imageSrc}
-              alt={post.alt}
-              width={800}
-              height={400}
-              className="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg mb-10"
-            />
-          )}
+          <center>
+            {post.imageSrc && (
+              <Image
+                src={post.imageSrc}
+                alt={post.alt}
+                width={800}
+                height={400}
+                className="w-1/2 h-1/2 object-cover rounded-lg shadow-lg mb-10"
+              />
+            )}
+          </center>
           <div className="flex items-center gap-4 mb-4">
             <p className="text-sm text-muted-foreground">
               {new Date(post.date).toLocaleDateString("en-US", {
