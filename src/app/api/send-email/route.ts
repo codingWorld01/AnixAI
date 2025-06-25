@@ -95,16 +95,14 @@ export async function POST(request: NextRequest) {
 
   try {
     await sendEmail({
-      to: process.env.EMAIL_TO || "yatharthaurangpure27@gmail.com",
+      to: process.env.EMAIL_TO || "info@anxai.io",
       subject: `New Contact Form Submission from ${firstName} ${lastName}`,
       text: emailText,
       html: emailHtml,
     });
 
-    // Trigger AI agent to process the email
-    await axios.post('http://localhost:3000/api/ai-email-agent');
 
-    return NextResponse.json({ message: "Email sent and AI agent triggered" }, { status: 200 });
+    return NextResponse.json({ message: "Email sent" }, { status: 200 });
   } catch (error) {
     console.error("Error in API route:", error);
     return NextResponse.json({ error: "Failed to send email" }, { status: 500 });

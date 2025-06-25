@@ -5,7 +5,8 @@ interface EmailData {
   to: string;
   subject: string;
   text: string;
-  html: string;
+  html?: string;
+  attachments?: { filename: string; path: string }[];
 }
 
 /**
@@ -32,6 +33,7 @@ export async function sendEmail(emailData: EmailData): Promise<void> {
     subject: emailData.subject,
     text: emailData.text,
     html: emailData.html,
+    attachments: emailData.attachments,
   };
 
   try {
