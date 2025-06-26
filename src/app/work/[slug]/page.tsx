@@ -62,13 +62,13 @@ export default async function WorkProjectDetailPage({
   }
 
   return (
-    <section className="pt-20 pb-16 bg-background min-h-screen">
+    <section className="pt-5 sm:pt-20 sm:pb-16 bg-background min-h-screen">
       <div className="container px-4 md:px-8">
         {/* Intro Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-10 sm:mb-20">
           {/* Left Side: Headline, Description, Tags */}
           <div className="flex flex-col justify-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
               {project.headline}
             </h1>
             <p className="text-lg text-foreground leading-relaxed mb-8">
@@ -97,15 +97,15 @@ export default async function WorkProjectDetailPage({
         </div>
 
         {/* Key Features Section */}
-        <div className="mb-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
+        <div className="mb-10 sm:mb-20">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-3 sm:mb-12">
             Key Features
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8">
             {project.keyFeatures.map((feature, index) => (
               <div
                 key={index}
-                className="p-8 border border-border rounded-lg bg-card text-center"
+                className="p-4 sm:p-8 border border-border rounded-lg bg-card text-center"
               >
                 <h3 className="text-xl font-semibold text-foreground mb-4">
                   {feature.headline}
@@ -119,15 +119,15 @@ export default async function WorkProjectDetailPage({
         </div>
 
         {/* Results and Impact Section */}
-        <div className="mb-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
+        <div className="mb-5 sm:mb-20">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-6 sm:mb-12">
             Results and Impact
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8">
             {project.results.map((result, index) => (
               <div
                 key={index}
-                className="p-8 border border-border rounded-lg bg-card text-center"
+                className="p-4 sm:p-8 border border-border rounded-lg bg-card text-center"
               >
                 <h3 className="text-xl font-semibold text-foreground mb-4">
                   {result.headline}
@@ -141,7 +141,7 @@ export default async function WorkProjectDetailPage({
         </div>
 
         {/* Testimonial Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-12 mb-10 sm:mb-20">
           {/* Left Side: Person Image */}
           <div className="relative w-full h-64 md:h-96">
             <Image
@@ -167,21 +167,21 @@ export default async function WorkProjectDetailPage({
 
         {/* Similar Solutions Section */}
         <div className="mb-5">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-2 sm:mb-12">
             Similar Solutions We Can Build for Your Business
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {project.similarSolutions.map((solution, index) => (
               <div
                 key={index}
-                className="p-8 border border-border rounded-lg bg-card text-center"
+                className="border border-border rounded-lg pb-4 bg-card text-center"
               >
-                <div className="relative w-full h-40 mb-6">
+                <div className="relative w-full h-56 sm:h-64 mb-6">
                   <Image
                     src={solution.imageSrc}
                     alt={solution.imageAlt}
                     fill
-                    className="object-cover rounded-lg"
+                    className="rounded-lg"
                   />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-4">
@@ -191,7 +191,7 @@ export default async function WorkProjectDetailPage({
                   {solution.description}
                 </p>
                 <Link href="/contact-us">
-                  <Button className="bg-gradient rounded-full text-white hover:opacity-90">
+                  <Button className="bg-gradient w-[80%] rounded-full text-white hover:opacity-90">
                     Get Started
                   </Button>
                 </Link>

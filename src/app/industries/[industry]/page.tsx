@@ -49,34 +49,35 @@ export default async function IndustryPage({
   }
 
   return (
-    <section className="pt-20 pb-16 bg-background min-h-screen text-foreground">
+    <section className="pt-5 sm:pt-20 pb-16 bg-background min-h-screen text-foreground">
       <div className="container mx-auto px-4 md:px-8">
         {/* Header Section */}
-        <div className="text-center max-w-4xl mx-auto mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
+        <div className="text-center max-w-4xl mx-auto mb-8">
+          <h1 className="text-3xl md:text-5xl font-bold mb-3 sm:mb-6 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
             {industry.title} Industry Solutions
           </h1>
-          <p className="text-gray-300 text-lg md:text-xl">
+          <p className="text-gray-300 text-base md:text-xl">
             {industry.description}
           </p>
         </div>
 
         {/* Hero Image */}
         <center>
-          <div className="relative w-full md:w-1/2 h-80 md:h-[30rem] mb-16 rounded-xl overflow-hidden shadow-xl">
+          <div className="relative mb-10  sm:mb-16 rounded-xl overflow-hidden shadow-xl">
             <Image
               src={industry.imageSrc}
               alt={industry.imageAlt}
-              fill
-              className=""
+              width={400}
+              height={300}
+              className="sm:w-1/3 w-full"
               priority
             />
           </div>
         </center>
 
         {/* Detailed Description */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-purple-400">
+        <div className="max-w-4xl mx-auto mb-10 sm:mb-16">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-3 sm:mb-6 text-purple-400">
             Our Approach
           </h2>
           <p className="text-gray-300 text-lg leading-relaxed">
@@ -85,7 +86,7 @@ export default async function IndustryPage({
         </div>
 
         {/* Features Section */}
-        <div className="max-w-4xl mx-auto mb-16">
+        <div className="max-w-4xl mx-auto mb-10 sm:mb-16">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-purple-400">
             Key Features
           </h2>
@@ -105,7 +106,7 @@ export default async function IndustryPage({
         </div>
 
         {/* Use Cases Section */}
-        <div className="max-w-4xl mx-auto mb-16">
+        <div className="max-w-4xl mx-auto mb-10 sm:mb-16">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-purple-400">
             Use Cases
           </h2>
@@ -125,7 +126,7 @@ export default async function IndustryPage({
         </div>
 
         {/* Benefits Section */}
-        <div className="max-w-4xl mx-auto mb-16">
+        <div className="max-w-4xl mx-auto mb-10 sm:mb-16">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-purple-400">
             Benefits
           </h2>
@@ -145,7 +146,7 @@ export default async function IndustryPage({
         </div>
 
         {/* FAQ Section */}
-        <div className="max-w-4xl mx-auto mb-16">
+        <div className="max-w-4xl mx-auto mb-4 sm:mb-16">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-purple-400">
             Frequently Asked Questions
           </h2>
@@ -164,7 +165,7 @@ export default async function IndustryPage({
         <div className="text-center">
           <Link
             href="/contact-us"
-            className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-full hover:from-purple-700 hover:to-blue-700 transition-colors duration-300 text-lg font-semibold shadow-lg"
+            className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-2  sm:px-8 sm:py-4 rounded-full hover:from-purple-700 hover:to-blue-700 transition-colors duration-300 text-lg font-semibold shadow-lg"
           >
             Get in Touch
           </Link>

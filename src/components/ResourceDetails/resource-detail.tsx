@@ -39,7 +39,7 @@ export default function ResourceDetail({ resource }: ResourceDetailProps) {
   };
 
   return (
-    <section className="pt-20 pb-16 bg-background min-h-screen">
+    <section className="pt-5 sm:pt-20 pb-16 bg-background min-h-screen">
       <div className="container px-4 md:px-8">
         {/* Intro Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
@@ -64,7 +64,7 @@ export default function ResourceDetail({ resource }: ResourceDetailProps) {
         </div>
 
         {/* Topics Covered and Download Form Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-5 sm:mb-20">
           {/* Left Side: Topics Covered */}
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">

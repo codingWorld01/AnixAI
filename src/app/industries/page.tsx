@@ -98,7 +98,7 @@ export const industriesData = [
 export default function IndustriesPage() {
   return (
     <div className="mb-10">
-      <section className="bg-black text-white py-16">
+      <section className="bg-black text-white py-5 sm:py-16">
         <div className="container px-4 md:px-8 text-center">
           {/* Header Section */}
           <div className="mx-auto">
@@ -106,26 +106,25 @@ export default function IndustriesPage() {
               Industries
             </h2>
             <h1 className="text-3xl md:text-6xl font-bold mb-4 leading-tight">
-              <span>Transforming Industries through</span>
-              <br />
+              <span>Transforming Industries through </span>
               <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
                 Innovative digital solutions.
               </span>
             </h1>
-            <p className="text-base md:text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-gray-300 mb-4 sm:mb-8 max-w-2xl mx-auto">
               With our expertise and innovative approach, we help businesses
               achieve enhanced operational efficiency, streamlined workflow and
               reduced costs.
             </p>
             <Link href="/contact-us">
-              <button className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-full hover:from-purple-700 hover:to-blue-700 transition-colors duration-300 text-lg font-medium">
+              <button className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-1 sm:py-3 rounded-full hover:from-purple-700 hover:to-blue-700 transition-colors duration-300 text-lg font-medium">
                 Contact Us →
               </button>
             </Link>
           </div>
         </div>
       </section>
-      <div className="min-h-screen bg-black text-white">
+      <div className="max-sm:mt-4 min-h-screen bg-black text-white">
         {industriesData.map((industry, index) => (
           <IndustrySection
             key={index}

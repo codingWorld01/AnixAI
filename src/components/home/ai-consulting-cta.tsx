@@ -10,7 +10,7 @@ export default function AIConsultingCTA() {
 
           {/* Text Content with Semi-Transparent Background */}
           <div className="relative rounded-lg py-8 px-6">
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 drop-shadow-lg">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 drop-shadow-lg">
               Looking to incorporate AI in your project?
             </h2>
             <p className="text-xl text-muted-foreground mb-8 drop-shadow-md">

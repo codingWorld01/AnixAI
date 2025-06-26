@@ -5,7 +5,7 @@ import { workProjects, WorkProject } from "@/data/workProjects";
 
 export default async function WorkPage() {
   return (
-    <section className="pt-20 pb-16 bg-background min-h-screen">
+    <section className="pt-8 sm:pt-20 sm:pb-16 bg-background min-h-screen">
       <div className="container px-4 md:px-8">
         <h1 className="text-3xl md:text-4xl font-bold mb-12 text-center text-foreground">
           Digital solutions we’ve engineered

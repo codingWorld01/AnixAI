@@ -9,7 +9,7 @@ import { resources, Resource } from "@/data/resources";
 export default function ResourcesPage() {
   return (
     <section className="bg-background min-h-screen">
-      <div className="container px-4 md:px-8 pt-20">
+      <div className="container px-4 md:px-8 pt-5 sm:pt-20">
         <h1 className="text-3xl md:text-4xl font-bold mb-12 text-center text-foreground">
           Learning with Anix AI
         </h1>
