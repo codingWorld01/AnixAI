@@ -100,47 +100,47 @@ function generateOfferLetterPDF(pdf: jsPDF, name: string, duration: string, role
   // Greeting
   const greeting = `Dear ${name},`;
   pdf.text(greeting, margin, yPosition);
-  yPosition += 15;
+  yPosition += 10;
 
   // Paragraph 1
   const para1 = `We are pleased to offer you an internship opportunity at Anix AI in the establishment of the Global AI Association in the domain of ${role}.`;
   const para1Lines = pdf.splitTextToSize(para1, maxWidth);
   pdf.text(para1Lines, margin, yPosition);
-  yPosition += para1Lines.length * 7 + 10;
+  yPosition += para1Lines.length * 6;
 
   // Paragraph 2
   const para2 = `The internship is scheduled to begin on ${startDate}. During this period, you will be engaged in tasks and projects aligned with the objectives of our team and overall organizational goals.`;
   const para2Lines = pdf.splitTextToSize(para2, maxWidth);
   pdf.text(para2Lines, margin, yPosition);
-  yPosition += para2Lines.length * 7 + 10;
+  yPosition += para2Lines.length * 6;
 
   // Paragraph 3
   const para3 = `Further details regarding your responsibilities, reporting structure, work schedule, and required documentation will be communicated to you separately. We expect all interns to demonstrate a professional attitude, maintain confidentiality, and actively contribute to the assigned work.`;
   const para3Lines = pdf.splitTextToSize(para3, maxWidth);
   pdf.text(para3Lines, margin, yPosition);
-  yPosition += para3Lines.length * 7 + 10;
+  yPosition += para3Lines.length * 6;
 
   // Paragraph 4
   const para4 = `Please confirm your acceptance of this offer by ${confirmationDeadline} by replying to this email or signing and returning the attached confirmation letter.`;
   const para4Lines = pdf.splitTextToSize(para4, maxWidth);
   pdf.text(para4Lines, margin, yPosition);
-  yPosition += para4Lines.length * 7 + 10;
+  yPosition += para4Lines.length * 6;
 
   // Paragraph 5
   const para5 = `We look forward to your association with Anix AI and hope this internship proves to be a valuable learning experience for you.`;
   const para5Lines = pdf.splitTextToSize(para5, maxWidth);
   pdf.text(para5Lines, margin, yPosition);
-  yPosition += para5Lines.length * 7 + 20;
+  yPosition += para5Lines.length * 7 + 10;
 
   // Signature
   pdf.text("Warm regards,", margin, yPosition);
-  yPosition += 10;
+  yPosition += 5;
   pdf.setFont("helvetica", "bold");
   pdf.text("HR team", margin, yPosition);
-  yPosition += 7;
+  yPosition += 5;
   pdf.setFont("helvetica", "normal");
   pdf.text("Anix AI", margin, yPosition);
-  yPosition += 20;
+  yPosition += 10;
 
   // Contact info
   pdf.setFontSize(10);
