@@ -97,8 +97,7 @@ export default function ServicesPage() {
               Services
             </h2>
             <h1 className="text-2xl md:text-6xl font-bold mb-4 leading-tight">
-              <span>Empowering Businesses with</span>
-              <br />
+              <span>Empowering Businesses with </span>
               <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
                 Cutting-Edge Services.
               </span>
@@ -116,7 +115,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="mt-4 sm:py-8 sm:px-4 md:pb-16 md:px-8 bg-black text-white">
+      <section className="pt-4 sm:py-8 sm:px-4 md:pb-16 md:px-8 bg-black text-white">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 sm:mb-8 text-white bg-clip-text text-transparent">
             Our Capabilities

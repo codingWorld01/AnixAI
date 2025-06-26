@@ -371,9 +371,9 @@ export default function ContactPage() {
               </Card>
             </div>
 
-            <div className="space-y-8">
+            <div className="space-y-2 sm:space-y-8">
               <div>
-                <h2 className="text-2xl font-bold mb-6">Our Offices</h2>
+                <h2 className="text-2xl font-bold mb-2 sm:mb-6">Our Offices</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <Card className="border-border/40 bg-card/60">
                     <CardContent className="p-6">
@@ -407,7 +407,7 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold mb-6">Connect With Us</h2>
+                <h2 className="text-2xl font-bold mb-2 sm:mb-6">Connect With Us</h2>
                 <div className="grid grid-cols-1 gap-6">
                   <Card className="border-border/40 bg-card/60">
                     <CardContent className="p-6">
@@ -493,11 +493,11 @@ export default function ContactPage() {
           </div>
 
           {/* Why Choose Us Section */}
-          <div className="mt-16">
-            <h2 className="text-2xl font-bold mb-6 text-center">
+          <div className="mt-4 sm:mt-16">
+            <h2 className="text-3xl font-bold mb-2 sm:mb-6 text-center">
               Why Choose Us?
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-2 sm:gap-6">
               {/* Card 1: Expertise */}
               <Card className="border-border/40 bg-card/60">
                 <CardContent className="p-6 text-center">
