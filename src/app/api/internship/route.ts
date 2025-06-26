@@ -108,8 +108,8 @@ function generateOfferLetterPDF(pdf: jsPDF, name: string, duration: string, role
   pdf.text(para1Lines, margin, yPosition);
   yPosition += para1Lines.length * 6;
 
-  // Paragraph 2
-  const para2 = `The internship is scheduled to begin on ${startDate}. During this period, you will be engaged in tasks and projects aligned with the objectives of our team and overall organizational goals.`;
+  // Paragraph 2 - Updated to include duration
+  const para2 = `The internship is scheduled to begin on ${startDate} for a duration of ${duration}. During this period, you will be engaged in tasks and projects aligned with the objectives of our team and overall organizational goals.`;
   const para2Lines = pdf.splitTextToSize(para2, maxWidth);
   pdf.text(para2Lines, margin, yPosition);
   yPosition += para2Lines.length * 6;
