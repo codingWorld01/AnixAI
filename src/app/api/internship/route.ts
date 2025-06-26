@@ -76,17 +76,59 @@ export async function POST(request: NextRequest) {
   }
 }
 
+
+
 function generateOfferLetterPDF(pdf: jsPDF, name: string, duration: string, role: string, startDate: string, confirmationDeadline: string) {
   const pageWidth = pdf.internal.pageSize.getWidth();
-  const pageHeight = pdf.internal.pageSize.getHeight();
   const margin = 20;
   const maxWidth = pageWidth - 2 * margin;
   
-  let yPosition = 30;
+  let yPosition = 0;
+
+  // Create black banner header
+  const bannerHeight = 30;
+  pdf.setFillColor(0, 0, 0); // Black background
+  pdf.rect(0, 0, pageWidth, bannerHeight, 'F');
+  
+  const logoStartX = 12;
+  const logoStartY = 19;
+  
+  // Add AnixAI text on the left
+  pdf.setFontSize(23);
+  pdf.setFont("helvetica", "bold");
+  pdf.setTextColor(255, 255, 255); // White text
+  pdf.text("AnixAI", logoStartX, logoStartY);
+  
+  // Contact information positioning
+  const contactX = pageWidth - 35;
+  const separatorX = pageWidth - 40;
+  
+  // Vertical separator line
+  pdf.setDrawColor(255, 255, 255);
+  pdf.setLineWidth(1);
+  pdf.line(separatorX, 5, separatorX, bannerHeight - 5);
+  
+  // Add contact information on the right side
+  pdf.setFontSize(9);
+  pdf.setFont("helvetica", "normal");
+  
+  // Email
+  pdf.text("info@anixai.io", contactX, logoStartY- 8);
+  
+  // Website
+  pdf.text("anixai.io", contactX, logoStartY -3 );
+  
+  // Phone
+  pdf.text("+919324744953", contactX, logoStartY + 2);
+  
+  // Reset for document content
+  pdf.setTextColor(0, 0, 0);
+  yPosition = bannerHeight + 20;
 
   // Title
   pdf.setFontSize(24);
   pdf.setFont("helvetica", "bold");
+  pdf.setTextColor(0, 0, 0); // Reset to black
   const title = "INTERNSHIP OFFER LETTER";
   const titleWidth = pdf.getTextWidth(title);
   pdf.text(title, (pageWidth - titleWidth) / 2, yPosition);
@@ -102,13 +144,14 @@ function generateOfferLetterPDF(pdf: jsPDF, name: string, duration: string, role
   pdf.text(greeting, margin, yPosition);
   yPosition += 10;
 
+  // Rest of the content remains the same...
   // Paragraph 1
   const para1 = `We are pleased to offer you an internship opportunity at Anix AI in the establishment of the Global AI Association in the domain of ${role}.`;
   const para1Lines = pdf.splitTextToSize(para1, maxWidth);
   pdf.text(para1Lines, margin, yPosition);
   yPosition += para1Lines.length * 6;
 
-  // Paragraph 2 - Updated to include duration
+  // Paragraph 2
   const para2 = `The internship is scheduled to begin on ${startDate} for a duration of ${duration}. During this period, you will be engaged in tasks and projects aligned with the objectives of our team and overall organizational goals.`;
   const para2Lines = pdf.splitTextToSize(para2, maxWidth);
   pdf.text(para2Lines, margin, yPosition);
@@ -154,6 +197,7 @@ function generateOfferLetterPDF(pdf: jsPDF, name: string, duration: string, role
   yPosition += 5;
   pdf.text("Subject: Internship offer at Anix AI", margin, yPosition);
 }
+
 
 function generateCertificatePDF(pdf: jsPDF, name: string, duration: string, role: string) {
   const pageWidth = pdf.internal.pageSize.getWidth();

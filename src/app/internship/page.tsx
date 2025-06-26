@@ -13,7 +13,7 @@ export default function InternshipPage() {
     role: "",
     email: "",
     startDate: "",
-    confirmationDeadline: ""
+    confirmationDeadline: "",
   });
   const [status, setStatus] = useState<string | null>(null);
 
@@ -97,7 +97,7 @@ export default function InternshipPage() {
               required
             />
 
-            <div className="flex gap-4">
+            <div className="flex md:gap-4 w-full">
               <Button
                 onClick={(e) => handleSubmit(e, "offer")}
                 className="flex-1"
