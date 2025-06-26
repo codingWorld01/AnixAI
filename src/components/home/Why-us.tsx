@@ -3,7 +3,7 @@ import React from "react";
 export function WhyUs() {
   return (
     <section
-      className="relative py-16 overflow-hidden bg-cover bg-center"
+      className="relative py-5 sm:py-16 overflow-hidden bg-cover bg-center"
       // style={{
       //     backgroundImage: `url('https://ext.same-assets.com/839307342/2437992869.webp')`,
       // }}
@@ -13,7 +13,7 @@ export function WhyUs() {
 
       <div className="container px-4 md:px-8 relative z-10">
         {/* Section Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-6 sm:mb-12">
           Why Us
         </h2>
 

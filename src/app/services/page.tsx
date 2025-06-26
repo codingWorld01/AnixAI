@@ -89,26 +89,26 @@ export const servicesData = [
 export default function ServicesPage() {
   return (
     <div className="mb-10">
-      <section className="bg-black text-white py-16">
+      <section className="bg-black text-white py-5 sm:py-16">
         <div className="container px-4 md:px-8 text-center">
           {/* Header Section */}
           <div className="mx-auto">
             <h2 className="text-sm uppercase text-gray-400 tracking-widest mb-2">
               Services
             </h2>
-            <h1 className="text-3xl md:text-6xl font-bold mb-4 leading-tight">
+            <h1 className="text-2xl md:text-6xl font-bold mb-4 leading-tight">
               <span>Empowering Businesses with</span>
               <br />
               <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
                 Cutting-Edge Services.
               </span>
             </h1>
-            <p className="text-base md:text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-gray-300 mb-5 sm:mb-8 max-w-2xl mx-auto">
               Leverage our expertise to transform your operations with
               state-of-the-art technology solutions tailored to your needs.
             </p>
             <Link href="/contact-us">
-              <button className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-full hover:from-purple-700 hover:to-blue-700 transition-colors duration-300 text-lg font-medium">
+              <button className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-1 sm:px-6 sm:py-3 rounded-full hover:from-purple-700 hover:to-blue-700 transition-colors duration-300 text-lg font-medium">
                 Contact Us →
               </button>
             </Link>
@@ -116,16 +116,16 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-8 px-4 md:pb-16 md:px-8 bg-black text-white">
+      <section className="mt-4 sm:py-8 sm:px-4 md:pb-16 md:px-8 bg-black text-white">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 sm:mb-8 text-white bg-clip-text text-transparent">
             Our Capabilities
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 max-w-6xl mx-auto">
             {capabilities.map((item, index) => (
               <div
                 key={index}
-                className="relative border border-pink-400  p-6 rounded-lg shadow-lg overflow-hidden group"
+                className="relative border border-pink-400 p-3 sm:p-6 rounded-lg shadow-lg overflow-hidden group"
               >
                 <Link href="/contact-us">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -145,7 +145,7 @@ export default function ServicesPage() {
       </section>
 
       <div className="min-h-screen py-10 bg-black text-white">
-        <h1 className="md:max-w-[50%] mx-auto text-3xl md:text-4xl font-bold mb-8 text-white bg-clip-text text-transparent text-center">
+        <h1 className="md:max-w-[50%] mx-auto text-2xl md:text-4xl font-bold mb-8 text-white bg-clip-text text-transparent text-center">
           Comprehensive Solutions Across All Technological Frontiers
         </h1>
         {servicesData.map((service, index) => (

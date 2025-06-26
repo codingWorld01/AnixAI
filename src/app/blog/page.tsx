@@ -7,7 +7,7 @@ import { blogPosts, BlogPost } from "@/data/blogPosts";
 export default async function BlogPage() {
   return (
     <section className="pb-16 bg-background min-h-screen">
-      <div className="container px-4 md:px-8 pt-20 mb-8">
+      <div className="container px-4 md:px-8 pt-10 md:pt-20 mb-8">
         <h1 className="text-3xl md:text-4xl font-bold mb-12 text-center text-foreground">
           Insights from Anix AI
         </h1>

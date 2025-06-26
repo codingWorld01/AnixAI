@@ -124,27 +124,27 @@ export default function CompanyPage() {
                 with cutting-edge technologies for a future-proof world.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-20 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-20 max-w-5xl mx-auto">
               <div className="text-center">
-                <h3 className="text-6xl font-bold text-foreground mb-2 text-gradient from-purple-600 to-blue-500">
+                <h3 className="text-6xl font-bold text-foreground sm:mb-2 text-gradient from-purple-600 to-blue-500">
                   50+
                 </h3>
                 <p className="text-muted-foreground">Our Core Team</p>
               </div>
               <div className="text-center">
-                <h3 className="text-6xl font-bold text-foreground mb-2 text-gradient from-purple-600 to-blue-500">
+                <h3 className="text-6xl font-bold text-foreground sm:mb-2 text-gradient from-purple-600 to-blue-500">
                   200+
                 </h3>
                 <p className="text-muted-foreground">Projects Delivered</p>
               </div>
               <div className="text-center">
-                <h3 className="text-6xl font-bold text-foreground mb-2 text-gradient from-purple-600 to-blue-500">
+                <h3 className="text-6xl font-bold text-foreground sm:mb-2 text-gradient from-purple-600 to-blue-500">
                   65+
                 </h3>
                 <p className="text-muted-foreground">AI Solutions</p>
               </div>
               <div className="text-center">
-                <h3 className="text-6xl font-bold text-foreground mb-2 text-gradient from-purple-600 to-blue-500">
+                <h3 className="text-6xl font-bold text-foreground sm:mb-2 text-gradient from-purple-600 to-blue-500">
                   4
                 </h3>
                 <p className="text-muted-foreground">Locations</p>

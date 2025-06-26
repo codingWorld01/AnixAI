@@ -70,17 +70,17 @@ export function StatsSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-16 overflow-hidden bg-cover bg-center"
+      className="relative py-10 sm:py-16 overflow-hidden bg-cover bg-center"
 
     >
       {/* Dark gradient overlay for readability */}
       <div className="absolute inset-0"></div>
 
-      <div className="container px-4 md:px-8 relative z-10">
+      <div className="container px-8 relative z-10">
         {/* Heading and Paragraph */}
         <div className="text-left max-w-3xl mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Helping startups to large-sized organizations with tailored solutions since 2014
+          <h2 className="text-2xl md:text-4xl font-bold text-white mb-6">
+            Helping startups to large-sized organizations with tailored solutions since 2020
           </h2>
           <p className="text-muted-foreground text-lg">
             As industry leaders, we bring a deep understanding of AI, Generative AI, Agentic AI, Chatbots, and Cloud technologies. Our skilled team of data scientists, engineers, developers, and MLOps specialists build scalable, end-to-end solutions tailored to your needs. We ensure measurable impacts, prioritize data security, and support you fully from pre-processing data to technology evaluation, delivering solutions that grow with your business.{" "}

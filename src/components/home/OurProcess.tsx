@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 export function OurProcess() {
     return (
         <section
-            className="relative py-16 overflow-hidden bg-cover bg-center"
+            className="relative pt-5 pb-10 sm:pt-16 overflow-hidden bg-cover bg-center"
             style={{
                 backgroundImage: `url('/images/hero-bg.webp')`,
             }}
@@ -17,7 +17,7 @@ export function OurProcess() {
                 <p className="text-sm text-white text-center mb-4">OUR PROCESS</p>
 
                 {/* Main Heading */}
-                <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-8 max-w-4xl mx-auto">
+                <h2 className="text-2xl md:text-4xl font-bold text-white text-center mb-8 max-w-4xl mx-auto">
                     Start improving your efficiency and reducing your operational costs with Generative AI in just a few weeks, not years.
                 </h2>
 

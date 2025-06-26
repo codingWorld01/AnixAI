@@ -405,7 +405,7 @@ export function Header() {
             >
               Resources
             </Link>
-            <Link href="/contact" onClick={closeMobileMenu}>
+            <Link href="/contact-us" onClick={closeMobileMenu}>
               <Button className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-white px-6 hover:opacity-90 w-full">
                 Contact Us
               </Button>

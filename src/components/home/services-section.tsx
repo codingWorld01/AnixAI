@@ -64,9 +64,9 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-5 mt-2 sm:py-20 bg-background">
       <div className="container px-4 md:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center sm:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Helping our clients to transform their business
           </h2>
@@ -76,15 +76,15 @@ export function ServicesSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 sm:gap-8">
           {services.map((service) => (
             <Link href={"/work"} key={service.title} className="group">
-              <div className="p-8 rounded-lg border border-border/40 bg-card/60 backdrop-blur-sm h-full flex flex-col group-hover:border-anixai-blue/50 transition-colors duration-300">
-                <div className="mb-6">{service.icon}</div>
+              <div className="px-8 py-4 sm:p-8 rounded-lg border border-border/40 bg-card/60 backdrop-blur-sm h-full flex flex-col group-hover:border-anixai-blue/50 transition-colors duration-300">
+                <div className="mb-2 sm:mb-6">{service.icon}</div>
                 <h3 className="text-xl font-semibold mb-3 transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground mb-4 flex-grow">
+                <p className="text-muted-foreground mb-1 sm:mb-4 flex-grow">
                   {service.description}
                 </p>
                 <div className="mt-auto">

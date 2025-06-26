@@ -120,7 +120,7 @@ export default async function BlogPostDetailPage({
   };
 
   return (
-    <section className="pt-20 pb-16 bg-background min-h-screen">
+    <section className="pt-5 sm:pt-20 pb-16 bg-background min-h-screen">
       <div className="container px-4 md:px-8">
         {/* Blog Post Details */}
         <div className="max-w-4xl mx-auto">

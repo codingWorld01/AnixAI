@@ -149,10 +149,10 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="pt-20 pb-16 bg-background">
+      <section className="pt-10 sm:pt-20 pb-16 bg-background">
         <div className="container px-4 md:px-8">
           <div className="text-center max-w-4xl mx-auto mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-3xl md:text-5xl font-bold mb-6">
               Let's{" "}
               <span className="text-gradient">build something amazing</span>{" "}
               together

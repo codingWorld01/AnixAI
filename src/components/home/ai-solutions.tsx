@@ -60,8 +60,8 @@ export function AISolutions() {
   };
 
   return (
-    <section className="pt-16 bg-background">
-      <div className="container px-4 md:px-8">
+    <section className="pt-5 sm:pt-16 bg-background">
+      <div className="container px-0 sm:px-8">
         <div className="text-center mb-1">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">
             AI Solutions Crafted for Our Clients
@@ -163,7 +163,7 @@ export function AISolutions() {
           </div>
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-5 sm:mt-12">
           <Link href="/work">
             <button className=" relative inline-flex items-center justify-center p-0.5 me-2 overflow-hidden text-sm font-medium text-white rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
               <span className=" relative px-5 py-2.5 transition-all ease-in duration-75 bg-black dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">

@@ -43,10 +43,10 @@ export default function InternshipPage() {
   };
 
   return (
-    <section className="pt-20 pb-16 bg-background min-h-screen">
+    <section className="pt-5 sm:pt-20 pb-16 bg-background min-h-screen">
       <div className="container px-4 md:px-8">
         <div className="max-w-2xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-center">
+          <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-6 text-center">
             Internship Documents
           </h1>
           <p className="text-muted-foreground text-lg text-center mb-8">
@@ -97,16 +97,16 @@ export default function InternshipPage() {
               required
             />
 
-            <div className="flex md:gap-4 w-full">
+            <div className="inline-block md:flex gap-4 ">
               <Button
                 onClick={(e) => handleSubmit(e, "offer")}
-                className="flex-1"
+                className="flex-1 w-full max-sm:my-2"
               >
                 Generate Offer Letter
               </Button>
               <Button
                 onClick={(e) => handleSubmit(e, "certificate")}
-                className="flex-1"
+                className="flex-1 w-full"
               >
                 Generate Completion Certificate
               </Button>
