@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { sendEmail } from "@/lib/email";
 import jsPDF from "jspdf";
+import * as path from "path";
+import * as os from "os";
+import * as fs from "fs";
 
 interface FormData {
   name: string;
@@ -17,14 +20,14 @@ export async function POST(request: NextRequest) {
   const { name, duration, role, email, type, startDate, confirmationDeadline } = body;
 
   if (!name || !duration || !role || !email || !type) {
-    return NextResponse.json({ error: "All fields are required" }, { status: 400 });
+    return NextResponse.json({ error: "All required fields are required" }, { status: 400 });
   }
 
   try {
     const pdf = new jsPDF({
-      orientation: 'portrait',
-      unit: 'mm',
-      format: 'a4'
+      orientation: "portrait",
+      unit: "mm",
+      format: "a4",
     });
 
     if (type === "offer") {
@@ -34,49 +37,53 @@ export async function POST(request: NextRequest) {
     }
 
     // Get PDF as buffer
-    const pdfBuffer = Buffer.from(pdf.output('arraybuffer'));
+    const pdfBuffer = Buffer.from(pdf.output("arraybuffer"));
 
-    // Create temporary file for email attachment
-    const fs = await import('fs');
-    const path = await import('path');
-    const os = await import('os');
-    
+    // Create temporary file for PDF
     const tempDir = os.tmpdir();
-    const fileName = `${type}_${name.replace(/\s+/g, "_")}.pdf`;
-    const tempFilePath = path.join(tempDir, fileName);
-    
-    // Write PDF buffer to temporary file
-    fs.writeFileSync(tempFilePath, pdfBuffer);
+    const pdfFileName = `${type}_${name.replace(/\s+/g, "_")}.pdf`;
+    const pdfTempFilePath = path.join(tempDir, pdfFileName);
+    fs.writeFileSync(pdfTempFilePath, pdfBuffer);
 
-    // Send email with PDF attachment
+    // Prepare attachments array
+    const attachments = [{ filename: pdfFileName, path: pdfTempFilePath }];
+
+    // Add Word file attachment only for offer letter
+    if (type === "offer") {
+      const wordFilePath = path.join(process.cwd(), "public", "code_of_conduct.docx");
+      if (fs.existsSync(wordFilePath)) {
+        attachments.push({ filename: "code_of_conduct.docx", path: wordFilePath });
+      } else {
+        console.warn("Code of conduct file not found at:", wordFilePath);
+      }
+    }
+
+    // Send email with attachments
     await sendEmail({
       to: email,
       subject: `${type === "offer" ? "Internship Offer Letter" : "Internship Completion Certificate"} for ${name}`,
-      text: `Dear ${name},\n\nPlease find attached your ${type === "offer" ? "internship offer letter" : "internship completion certificate"}.\n\nBest regards,\nThe Anix AI Team`,
-      attachments: [{ 
-        filename: fileName,
-        path: tempFilePath
-      }],
+      text: `Dear ${name},\n\nPlease find attached your ${type === "offer" ? "internship offer letter" : "internship completion certificate"}${
+        type === "offer" ? " and the code of conduct document" : ""
+      }.\n\nBest regards,\nThe Anix AI Team`,
+      attachments,
     });
 
-    // Clean up temporary file
+    // Clean up temporary PDF file
     try {
-      fs.unlinkSync(tempFilePath);
+      fs.unlinkSync(pdfTempFilePath);
     } catch (cleanupError) {
-      console.warn("Failed to cleanup temporary file:", cleanupError);
+      console.warn("Failed to cleanup temporary PDF file:", cleanupError);
     }
 
     return NextResponse.json({ message: "Document generated and sent successfully" }, { status: 200 });
   } catch (error) {
     console.error("Error:", error);
-    return NextResponse.json({ 
-      error: "Failed to generate or send document", 
-      details: error instanceof Error ? error.message : "Unknown error"
+    return NextResponse.json({
+      error: "Failed to generate or send document",
+      details: error instanceof Error ? error.message : "Unknown error",
     }, { status: 500 });
   }
 }
-
-
 
 function generateOfferLetterPDF(pdf: jsPDF, name: string, duration: string, role: string, startDate: string, confirmationDeadline: string) {
   const pageWidth = pdf.internal.pageSize.getWidth();
@@ -88,7 +95,7 @@ function generateOfferLetterPDF(pdf: jsPDF, name: string, duration: string, role
   // Create black banner header
   const bannerHeight = 30;
   pdf.setFillColor(0, 0, 0); // Black background
-  pdf.rect(0, 0, pageWidth, bannerHeight, 'F');
+  pdf.rect(0, 0, pageWidth, bannerHeight, "F");
   
   const logoStartX = 12;
   const logoStartY = 19;
@@ -113,10 +120,10 @@ function generateOfferLetterPDF(pdf: jsPDF, name: string, duration: string, role
   pdf.setFont("helvetica", "normal");
   
   // Email
-  pdf.text("info@anixai.io", contactX, logoStartY- 8);
+  pdf.text("info@anixai.io", contactX, logoStartY - 8);
   
   // Website
-  pdf.text("anixai.io", contactX, logoStartY -3 );
+  pdf.text("anixai.io", contactX, logoStartY - 3);
   
   // Phone
   pdf.text("+919324744953", contactX, logoStartY + 2);
@@ -128,7 +135,6 @@ function generateOfferLetterPDF(pdf: jsPDF, name: string, duration: string, role
   // Title
   pdf.setFontSize(24);
   pdf.setFont("helvetica", "bold");
-  pdf.setTextColor(0, 0, 0); // Reset to black
   const title = "INTERNSHIP OFFER LETTER";
   const titleWidth = pdf.getTextWidth(title);
   pdf.text(title, (pageWidth - titleWidth) / 2, yPosition);
@@ -144,7 +150,6 @@ function generateOfferLetterPDF(pdf: jsPDF, name: string, duration: string, role
   pdf.text(greeting, margin, yPosition);
   yPosition += 10;
 
-  // Rest of the content remains the same...
   // Paragraph 1
   const para1 = `We are pleased to offer you an internship opportunity at Anix AI in the establishment of the Global AI Association in the domain of ${role}.`;
   const para1Lines = pdf.splitTextToSize(para1, maxWidth);
@@ -197,7 +202,6 @@ function generateOfferLetterPDF(pdf: jsPDF, name: string, duration: string, role
   yPosition += 5;
   pdf.text("Subject: Internship offer at Anix AI", margin, yPosition);
 }
-
 
 function generateCertificatePDF(pdf: jsPDF, name: string, duration: string, role: string) {
   const pageWidth = pdf.internal.pageSize.getWidth();
