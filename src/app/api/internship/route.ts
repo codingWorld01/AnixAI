@@ -5,6 +5,7 @@ import * as path from "path";
 import * as os from "os";
 import * as fs from "fs";
 
+
 interface FormData {
   name: string;
   duration: string;
@@ -85,6 +86,8 @@ export async function POST(request: NextRequest) {
   }
 }
 
+
+
 function generateOfferLetterPDF(pdf: jsPDF, name: string, duration: string, role: string, startDate: string, confirmationDeadline: string) {
   const pageWidth = pdf.internal.pageSize.getWidth();
   const margin = 20;
@@ -98,14 +101,16 @@ function generateOfferLetterPDF(pdf: jsPDF, name: string, duration: string, role
   pdf.rect(0, 0, pageWidth, bannerHeight, "F");
   
   const logoStartX = 12;
-  const logoStartY = 19;
-  
-  // Add AnixAI text on the left
-  pdf.setFontSize(23);
-  pdf.setFont("helvetica", "bold");
-  pdf.setTextColor(255, 255, 255); // White text
-  pdf.text("AnixAI", logoStartX, logoStartY);
-  
+  const logoStartY = 5; // Adjusted to center vertically in the 30mm banner
+  const logoWidth = 30; // Adjust based on your logo's aspect ratio
+  const logoHeight = 22; // Adjust to fit within 30mm banner height
+
+  // Add AnixAI logo on the left
+  const logoPath = path.join(process.cwd(), "public", "images/anixlogo.png"); // Path to your logo
+  const fs = require("fs");
+  const logoData = fs.readFileSync(logoPath).toString("base64");
+  pdf.addImage(logoData, "PNG", logoStartX, logoStartY, logoWidth, logoHeight, undefined, "FAST");
+
   // Contact information positioning
   const contactX = pageWidth - 35;
   const separatorX = pageWidth - 40;
@@ -118,81 +123,134 @@ function generateOfferLetterPDF(pdf: jsPDF, name: string, duration: string, role
   // Add contact information on the right side
   pdf.setFontSize(9);
   pdf.setFont("helvetica", "normal");
+  pdf.setTextColor(255, 255, 255); // White text for contact info
   
   // Email
-  pdf.text("info@anixai.io", contactX, logoStartY - 8);
+  pdf.text("info@anixai.io", contactX, logoStartY + 6);
   
   // Website
-  pdf.text("anixai.io", contactX, logoStartY - 3);
+  pdf.text("anixai.io", contactX, logoStartY + 11);
   
   // Phone
-  pdf.text("+919324744953", contactX, logoStartY + 2);
+  pdf.text("+919324744953", contactX, logoStartY + 16);
   
   // Reset for document content
   pdf.setTextColor(0, 0, 0);
   yPosition = bannerHeight + 20;
 
-  // Title
-  pdf.setFontSize(24);
+  // Subject
+  pdf.setFontSize(12);
   pdf.setFont("helvetica", "bold");
-  const title = "INTERNSHIP OFFER LETTER";
-  const titleWidth = pdf.getTextWidth(title);
-  pdf.text(title, (pageWidth - titleWidth) / 2, yPosition);
-  
-  yPosition += 20;
+  const subjectPrefix = "Subject: ";
+  pdf.text(subjectPrefix, margin, yPosition);
+  pdf.setFont("helvetica", "normal"); // Reset to normal for the rest of the subject
+  const subjectText = " Internship Confirmation – Welcome to the Global AI Association Initiative!";
+  const subjectLines = pdf.splitTextToSize(subjectText, maxWidth - pdf.getTextWidth(subjectPrefix));
+  pdf.text(subjectLines, margin + pdf.getTextWidth(subjectPrefix), yPosition);
+  yPosition += subjectLines.length * 6 + 10;
 
   // Body content
   pdf.setFontSize(12);
   pdf.setFont("helvetica", "normal");
-  
-  // Greeting
-  const greeting = `Dear ${name},`;
+
+  // Greeting and Congratulations
+  pdf.setFont("helvetica", "bold"); // Make "Dear" bold
+  const greeting = `Dear ${name.split(" ")[0]},`;
   pdf.text(greeting, margin, yPosition);
+  pdf.setFont("helvetica", "normal"); // Reset to normal after greeting
   yPosition += 10;
 
-  // Paragraph 1
-  const para1 = `We are pleased to offer you an internship opportunity at Anix AI in the establishment of the Global AI Association in the domain of ${role}.`;
-  const para1Lines = pdf.splitTextToSize(para1, maxWidth);
-  pdf.text(para1Lines, margin, yPosition);
-  yPosition += para1Lines.length * 6;
+  const congrats = "Congratulations!";
+  pdf.text(congrats, margin, yPosition);
+  yPosition += 10;
 
-  // Paragraph 2
-  const para2 = `The internship is scheduled to begin on ${startDate} for a duration of ${duration}. During this period, you will be engaged in tasks and projects aligned with the objectives of our team and overall organizational goals.`;
+  // Paragraph 1 with bold segments
+  const para1Prefix = "We are happy to inform you that you have been selected for the prestigious Internship Program with ";
+  const para1AnixAI = "Anix AI";
+  const para1Middle = ", focusing on the establishment and growth of the ";
+  const para1GlobalAI = "Global AI Association (gainova.org)";
+  const para1Suffix = ` as a ${role}.`;
+
+  pdf.setFont("helvetica", "normal");
+  const para1PrefixLines = pdf.splitTextToSize(para1Prefix, maxWidth);
+  pdf.text(para1PrefixLines, margin, yPosition);
+  yPosition += para1PrefixLines.length * 6;
+
+  pdf.setFont("helvetica", "bold");
+  pdf.text(para1AnixAI, margin, yPosition);
+  yPosition += 6;
+
+  pdf.setFont("helvetica", "normal");
+  const para1MiddleLines = pdf.splitTextToSize(para1Middle, maxWidth);
+  pdf.text(para1MiddleLines, margin, yPosition);
+  yPosition += para1MiddleLines.length * 6;
+
+  pdf.setFont("helvetica", "bold");
+  pdf.text(para1GlobalAI, margin, yPosition);
+  yPosition += 6;
+
+  pdf.setFont("helvetica", "normal");
+  const para1SuffixLines = pdf.splitTextToSize(para1Suffix, maxWidth);
+  pdf.text(para1SuffixLines, margin, yPosition);
+  yPosition += para1SuffixLines.length * 6;
+
+  const para2 = `This is a unique opportunity to collaborate on an international project that blends cutting-edge AI initiatives with strategic, technical, and operational contributions. Your internship will span ${duration}, starting on ${startDate}, providing you with the chance to build real-world expertise, grow your network, and enhance your personal and professional brand on a global scale.`;
   const para2Lines = pdf.splitTextToSize(para2, maxWidth);
   pdf.text(para2Lines, margin, yPosition);
   yPosition += para2Lines.length * 6;
 
-  // Paragraph 3
-  const para3 = `Further details regarding your responsibilities, reporting structure, work schedule, and required documentation will be communicated to you separately. We expect all interns to demonstrate a professional attitude, maintain confidentiality, and actively contribute to the assigned work.`;
-  const para3Lines = pdf.splitTextToSize(para3, maxWidth);
-  pdf.text(para3Lines, margin, yPosition);
-  yPosition += para3Lines.length * 6;
+  // Attachments
+  pdf.setFont("helvetica", "bold");
+  pdf.text("Please find attached:", margin, yPosition);
+  yPosition += 10;
 
-  // Paragraph 4
-  const para4 = `Please confirm your acceptance of this offer by ${confirmationDeadline} by replying to this email or signing and returning the attached confirmation letter.`;
-  const para4Lines = pdf.splitTextToSize(para4, maxWidth);
-  pdf.text(para4Lines, margin, yPosition);
-  yPosition += para4Lines.length * 6;
+  pdf.setFont("helvetica", "normal");
+  const attachment1 = "• Your Internship Offer Letter";
+  const attachment2 = "• Code of Conduct – outlining our shared values and professional standards";
+  pdf.text(attachment1, margin + 5, yPosition);
+  yPosition += 6;
+  pdf.text(attachment2, margin + 5, yPosition);
+  yPosition += 10;
 
-  // Paragraph 5
-  const para5 = `We look forward to your association with Anix AI and hope this internship proves to be a valuable learning experience for you.`;
-  const para5Lines = pdf.splitTextToSize(para5, maxWidth);
-  pdf.text(para5Lines, margin, yPosition);
-  yPosition += para5Lines.length * 7 + 10;
+  // Confirmation Steps
+  pdf.setFont("helvetica", "bold");
+  pdf.text("To confirm your participation:", margin, yPosition);
+  yPosition += 10;
+
+  pdf.setFont("helvetica", "normal");
+  const step1Text = `1. Reply to this email with your acceptance of the offer by ${confirmationDeadline}.`;
+  const step2Text = "2. Review, sign, and return the Code of Conduct as part of your onboarding process. Please attach it in email as well.";
+  const step1Lines = pdf.splitTextToSize(step1Text, maxWidth);
+  const step2Lines = pdf.splitTextToSize(step2Text, maxWidth);
+  pdf.text(step1Lines, margin + 5, yPosition);
+  yPosition += step1Lines.length * 6;
+  pdf.text(step2Lines, margin + 5, yPosition);
+  yPosition += step2Lines.length * 6 + 10;
+
+  // Closing
+  const closing = `We are excited to welcome you to this dynamic journey where your contribution will directly impact the future of AI innovation and collaboration.`;
+  const closingLines = pdf.splitTextToSize(closing, maxWidth);
+  pdf.text(closingLines, margin, yPosition);
+  yPosition += closingLines.length * 6;
+
+  const tagline = `Let’s build the future of AI & Students, together!`;
+  const taglineLines = pdf.splitTextToSize(tagline, maxWidth);
+  pdf.text(taglineLines, margin, yPosition);
+  yPosition += taglineLines.length * 6 + 10;
 
   // Signature
   pdf.text("Warm regards,", margin, yPosition);
   yPosition += 5;
   pdf.setFont("helvetica", "bold");
-  pdf.text("HR team", margin, yPosition);
+  pdf.text("The Anix AI HR Team", margin, yPosition);
   yPosition += 5;
   pdf.setFont("helvetica", "normal");
-  pdf.text("Anix AI", margin, yPosition);
+  pdf.text("Empowering Tomorrow’s Innovators", margin, yPosition);
   yPosition += 10;
 
   // Contact info
   pdf.setFontSize(10);
-  pdf.text("Email: info@anix.io", margin, yPosition);
+  pdf.text("Email: info@anixai.io", margin, yPosition);
   yPosition += 5;
   pdf.text(`Date: ${new Date().toLocaleDateString()}`, margin, yPosition);
   yPosition += 5;
@@ -202,6 +260,7 @@ function generateOfferLetterPDF(pdf: jsPDF, name: string, duration: string, role
   yPosition += 5;
   pdf.text("Subject: Internship offer at Anix AI", margin, yPosition);
 }
+
 
 function generateCertificatePDF(pdf: jsPDF, name: string, duration: string, role: string) {
   const pageWidth = pdf.internal.pageSize.getWidth();
