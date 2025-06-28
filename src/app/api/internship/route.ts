@@ -164,35 +164,10 @@ function generateOfferLetterPDF(pdf: jsPDF, name: string, duration: string, role
   pdf.text(congrats, margin, yPosition);
   yPosition += 10;
 
-  // Paragraph 1 with bold segments
-  const para1Prefix = "We are happy to inform you that you have been selected for the prestigious Internship Program with ";
-  const para1AnixAI = "Anix AI";
-  const para1Middle = ", focusing on the establishment and growth of the ";
-  const para1GlobalAI = "Global AI Association (gainova.org)";
-  const para1Suffix = ` as a ${role}.`;
-
-  pdf.setFont("helvetica", "normal");
-  const para1PrefixLines = pdf.splitTextToSize(para1Prefix, maxWidth);
-  pdf.text(para1PrefixLines, margin, yPosition);
-  yPosition += para1PrefixLines.length * 6;
-
-  pdf.setFont("helvetica", "bold");
-  pdf.text(para1AnixAI, margin, yPosition);
-  yPosition += 6;
-
-  pdf.setFont("helvetica", "normal");
-  const para1MiddleLines = pdf.splitTextToSize(para1Middle, maxWidth);
-  pdf.text(para1MiddleLines, margin, yPosition);
-  yPosition += para1MiddleLines.length * 6;
-
-  pdf.setFont("helvetica", "bold");
-  pdf.text(para1GlobalAI, margin, yPosition);
-  yPosition += 6;
-
-  pdf.setFont("helvetica", "normal");
-  const para1SuffixLines = pdf.splitTextToSize(para1Suffix, maxWidth);
-  pdf.text(para1SuffixLines, margin, yPosition);
-  yPosition += para1SuffixLines.length * 6;
+  const para1 = `We are happy to inform you that you have been selected for the prestigious Internship Program with Anix AI, focusing on the establishment and growth of the Global AI Association (gainova.org) as a ${role}.`;
+  const para1Lines = pdf.splitTextToSize(para1, maxWidth);
+  pdf.text(para1Lines, margin, yPosition);
+  yPosition += para1Lines.length * 6;
 
   const para2 = `This is a unique opportunity to collaborate on an international project that blends cutting-edge AI initiatives with strategic, technical, and operational contributions. Your internship will span ${duration}, starting on ${startDate}, providing you with the chance to build real-world expertise, grow your network, and enhance your personal and professional brand on a global scale.`;
   const para2Lines = pdf.splitTextToSize(para2, maxWidth);
